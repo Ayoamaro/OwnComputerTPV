@@ -1,3 +1,70 @@
+/*creamos la base de datos*/
 create database bd_own_computer;
 
-create table procesadores (cod, nombre, nucleo, frecuencia,
+/*creamos la tabla procesardor e insertamos sus datos*/
+create table procesador (codProc int AUTO_INCREMENT PRIMARY KEY, nombreProc varchar(50), nucleos int, frecuencia varchar(20), socket varchar(20), precio double);
+
+insert into procesador values (null, 'AMD Ryzen 5 5600X', 6, '3.7GHz', 'AM4', 349.90);
+insert into procesador values (null, 'AMD A Series A6-7480', 1, '3.5GHz', 'FM2', 28.80);
+insert into procesador values (null, 'Intel Core i7-8700', 6, '3.2GHz', '1151', 239.89);
+insert into procesador values (null, 'Intel Core i5-8400 ', 6, '2.8GHz', '1151', 166.44);
+insert into procesador values (null, 'Intel Core i5-10400F ', 6, '2.9GHz', '1200', 139.90);
+
+/*creamos tabla placa base, sus constraint e insertamos datos*/
+create table placaBase (codPla int AUTO_INCREMENT PRIMARY key, nombrePla varchar(50), socketPla varchar(20), precioPla double);
+
+ALTER TABLE placabase ADD CONSTRAINT fk_socket FOREIGN KEY (codPla) REFERENCES procesador (codProc); 
+
+ insert into placabase values(null, 'Gigabyte B450M DS3H V2', 'AM4', 72.99);
+ insert into placabase values(null, 'Asus A68HM-PLUS', 'FM2', 69.99);
+ insert into placabase values(null, 'Gigabyte B365M-DS3H ', '1151', 75.99);
+ insert into placabase values(null, 'MSI Z390-A PRO', '1151', 119.91); 
+ insert into placabase values(null, 'MSI Z490-A PRO', '1200', 154.90);
+ 
+ /*creamos tabla tarjeta gráfica e insertamos datos*/
+ create table tarjetaGrafica (codTar int AUTO_INCREMENT PRIMARY KEY, nombreTar varchar(50), memoria char(4), precioTar double);
+ 
+ insert into tarjetagrafica values (null, 'Gigabyte GeForce GT 1030 OC', '2GB', 84.99);
+ insert into tarjetagrafica values (null, 'XFX AMD Radeon RX 580 GTS XXX Edition', '8GB', 259.90);
+ insert into tarjetagrafica values (null, 'EVGA GeForce RTX 2060 Super SC Ultra Gaming', '8GB', 449.90);
+ insert into tarjetagrafica values (null, 'Asus GeForce GTX 1050 Ti ', '4GB', 210.81);
+ insert into tarjetagrafica values (null, 'PowerColor Red Dragon Radeon RX 550', '4GB', 99.99);
+ 
+ /*creamos tabla almacenamiento e insertamos datos*/
+ create table almacenamiento (codAlma int AUTO_INCREMENT PRIMARY KEY, nombreAlma varchar(50), tipo char(4), capacidad char(6), precioAlma double);
+ 
+ insert into almacenamiento values(null, 'Seagate BarraCuda 3.5"', 'HDD', '1000GB', 34.94);
+ insert into almacenamiento values(null, 'Nfortec Alcyon X SSD M.2', 'NMVe', '512GB', 110.59);
+ insert into almacenamiento values(null, 'Kioxia EXCERIA', 'SSD ', '480GB', 54.91);
+ insert into almacenamiento values(null, 'Samsung 970 EVO Plus', 'NMVe', '500GB', 108.33);
+ insert into almacenamiento values(null, 'Kingston A400', 'SSD', '480GB', 43.98);
+ 
+ /*creamos la tabla fuente e insertamos datos*/
+ create table fuente (codFuente int AUTO_INCREMENT PRIMARY KEY, nombreFuente varchar(50), potencia char(5), precioFuente double);
+ 
+ insert into fuente values (null, 'Tempest Gaming GPSU', '650W', 39.98);
+ insert into fuente values (null, 'Nfortec Sagitta RGB Plus Gold', '850W', 99.95);
+ insert into fuente values (null, 'Nox Urano VX Bronze ', '750W', 54.99);
+ insert into fuente values (null, 'Thermaltake TR2 S 80 Plus', '700W', 64.99);
+ insert into fuente values (null, 'Corsair CX750 80 Plus Bronze', '750W', 100.95);
+ 
+ /*creamos la tabla ram e insertamos datos*/
+ create table ram (codRam int AUTO_INCREMENT PRIMARY KEY, nombreRam varchar(50), tipo char(4), capacidad char(4), precioRam double);
+ 
+ insert into ram VALUES (null , 'Kingston HyperX Fury Black DDR4 x2', 'DDR4', '16GB', 85.99);
+ insert into ram VALUES (null , 'Kingston HyperX Fury Black', 'DDR4', '8GB', 40.80);
+ insert into ram VALUES (null , 'Corsair Vengeance LPX CL16', 'DDR4', '32GB', 154.99);
+ insert into ram VALUES (null , 'Corsair Vengeance LPX CL16 Negro', 'DDR4', '16GB', 91.87);
+ insert into ram VALUES (null , 'Kingston ValueRAM CL11', 'DDR3', '8GB', 39.94);
+ 
+ /*creamos la tabla caja e insertammos datos*/
+ create table caja (codCaja int AUTO_INCREMENT PRIMARY KEY, nombreCaja varchar(50), precioCaja double);
+ 
+ insert into caja values (null, 'Tempest Spectra RGB', 34.99);
+insert into caja values (null, 'Nox Hummer TGX Rainbow RGB', 104.98);
+insert into caja values (null, 'Nox Hummer MC Pro ARGB', 49.99);
+insert into caja values (null, 'Corsair Carbide Spec-Delta RGB', 74.90);
+insert into caja values (null, 'Nox Hummer Nova', 72.00);
+
+ 
+ 
