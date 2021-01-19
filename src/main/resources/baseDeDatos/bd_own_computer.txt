@@ -1,0 +1,3 @@
+create database bd_own_computer;
+
+create table procesadores (cod, nombre, nucleo, frecuencia,
