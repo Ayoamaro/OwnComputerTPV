@@ -7,12 +7,20 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.scene.layout.BorderPane;
 
 public class Controller implements Initializable {
 
+	// VIEW
 	@FXML
-	BorderPane view;
+	private BorderPane view;
+	@FXML
+	private Button cpuBTN, motherboardBTN, heatsinkBTN, memoryramBTN, graphiccardBTN, harddiskBTN, accessoriesBTN, computerBTN, mountingBTN, addBTN, 
+	quantityBTN, deleteBTN, priceBTN, discountBTN, taxesBTN, purchaseBTN;
+	@FXML
+	private ListView<String> productsLIST;
 	
 	// CONSTRUCTOR
 	public Controller() throws IOException {
