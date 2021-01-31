@@ -18,13 +18,9 @@ public class Controller implements Initializable {
 	@FXML
 	private BorderPane view;
 	@FXML
-<<<<<<< HEAD
 	private Button cpuBTN, motherboardBTN, heatsinkBTN, memoryramBTN, graphiccardBTN, harddiskBTN, powersupplyBTN, caseBTN, devicesBTN, addBTN, 
 	quantityBTN, deleteBTN, priceBTN, discountBTN, taxesBTN, purchaseBTN;
-=======
-	private Button cpuBTN, motherboardBTN, heatsinkBTN, memoryramBTN, graphiccardBTN, harddiskBTN, accessoriesBTN,
-			computerBTN, mountingBTN, addBTN, quantityBTN, deleteBTN, priceBTN, discountBTN, taxesBTN, purchaseBTN;
->>>>>>> 5ab4fef8d60dd1b4352e46c4e96b0aad346b80e2
+
 	@FXML
 	private ListView<String> productsLIST;
 
@@ -37,9 +33,8 @@ public class Controller implements Initializable {
 
 	// INITIALIZE
 	@Override
-	public void initialize(URL location, ResourceBundle resources) {
+	public void initialize(URL location, ResourceBundle resources) { }
 		
-<<<<<<< HEAD
 	
 	@FXML
 	void onCPU_Pressed(ActionEvent event) { }
@@ -73,88 +68,8 @@ public class Controller implements Initializable {
 	void onPayAction(ActionEvent event) { }
 	
 	
-=======
-		
-	}
-
->>>>>>> 5ab4fef8d60dd1b4352e46c4e96b0aad346b80e2
 	// SHOW VIEW
 	public BorderPane getView() {
 		return view;
-	}
-
-	@FXML
-	void onAccesories_Pressed(ActionEvent event) {
-
-	}
-
-	@FXML
-	void onCPU_Pressed(ActionEvent event) {
-
-	}
-
-	@FXML
-	void onComputer_Pressed(ActionEvent event) {
-
-	}
-
-	@FXML
-	void onGraphicCard_Pressed(ActionEvent event) {
-
-	}
-
-	@FXML
-	void onHeatSkin_Pressed(ActionEvent event) {
-
-	}
-
-	@FXML
-	void onMemory_Pressed(ActionEvent event) {
-
-	}
-
-	@FXML
-	void onMotherboard_Pressed(ActionEvent event) {
-
-	}
-
-	@FXML
-	void onRAM_Pressed(ActionEvent event) {
-
-	}
-
-	@FXML
-	void onMounting_Pressed(ActionEvent event) {
-
-	}
-
-	@FXML
-	void applyDiscounts(ActionEvent event) {
-
-	}
-
-	@FXML
-	void applyTaxes(ActionEvent event) {
-
-	}
-
-	@FXML
-	void changeCuantity(ActionEvent event) {
-
-	}
-
-	@FXML
-	void changePrice(ActionEvent event) {
-
-	}
-
-	@FXML
-	void onPayAction(ActionEvent event) {
-
-	}
-
-	@FXML
-	void removeProduct(ActionEvent event) {
-
 	}
 }
