@@ -20,7 +20,6 @@ public class Controller implements Initializable {
 	@FXML
 	private Button cpuBTN, motherboardBTN, heatsinkBTN, memoryramBTN, graphiccardBTN, harddiskBTN, powersupplyBTN, caseBTN, devicesBTN, addBTN, 
 	quantityBTN, deleteBTN, priceBTN, discountBTN, taxesBTN, purchaseBTN;
-
 	@FXML
 	private ListView<String> productsLIST;
 
@@ -54,6 +53,8 @@ public class Controller implements Initializable {
 	void onCase_Pressed(ActionEvent event) { }
 	@FXML
 	void onDevices_Pressed(ActionEvent event) { }
+	@FXML
+	void addProduct(ActionEvent event) { }
 	@FXML
 	void changeCuantity(ActionEvent event) { }
 	@FXML
