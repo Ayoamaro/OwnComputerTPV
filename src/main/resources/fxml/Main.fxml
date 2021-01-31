@@ -84,7 +84,7 @@
                 </Menu>
                 <Menu mnemonicParsing="false" text="Help">
                   <items>
-                        <MenuItem mnemonicParsing="false" text="Acerca de...">
+                        <MenuItem mnemonicParsing="false" text="About us...">
                            <accelerator>
                               <KeyCodeCombination alt="DOWN" code="F1" control="UP" meta="UP" shift="UP" shortcut="UP" />
                            </accelerator>
@@ -143,86 +143,113 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="cpuBTN" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" GridPane.halignment="CENTER">
+            <Button fx:id="cpuBTN" alignment="CENTER" contentDisplay="BOTTOM" graphicTextGap="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCPU_Pressed" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="CPU" textAlignment="CENTER">
                <graphic>
-                  <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/cpu.png" />
                      </image>
                   </ImageView>
                </graphic>
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
             </Button>
-            <Button fx:id="motherboardBTN" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+            <Button fx:id="motherboardBTN" alignment="CENTER" contentDisplay="BOTTOM" graphicTextGap="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onMotherboard_Pressed" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="Motherboard" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER">
                <graphic>
-                  <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/motherboard.png" />
                      </image>
                   </ImageView>
                </graphic>
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
             </Button>
-            <Button fx:id="heatsinkBTN" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.halignment="CENTER">
+            <Button fx:id="heatsinkBTN" alignment="CENTER" contentDisplay="BOTTOM" graphicTextGap="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onHeatSkin_Pressed" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="Heat-Sinks" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER">
                <graphic>
-                  <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/speedfan.png" />
                      </image>
                   </ImageView>
                </graphic>
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
             </Button>
-            <Button fx:id="memoryramBTN" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <Button fx:id="memoryramBTN" alignment="CENTER" contentDisplay="BOTTOM" graphicTextGap="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onRAM_Pressed" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="RAM" textAlignment="CENTER" GridPane.rowIndex="1">
                <graphic>
-                  <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/memory-ram.png" />
                      </image>
                   </ImageView>
                </graphic>
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
             </Button>
-            <Button fx:id="graphiccardBTN" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <Button fx:id="graphiccardBTN" alignment="CENTER" contentDisplay="BOTTOM" graphicTextGap="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onGraphicCard_Pressed" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="Graphic Card" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                <graphic>
-                  <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/graphic-card.png" />
                      </image>
                   </ImageView>
                </graphic>
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
             </Button>
-            <Button fx:id="harddiskBTN" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <Button fx:id="harddiskBTN" alignment="CENTER" contentDisplay="BOTTOM" graphicTextGap="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onMemory_Pressed" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="Hard-Disk" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                <graphic>
-                  <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/hard-disk.png" />
                      </image>
                   </ImageView>
                </graphic>
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
             </Button>
-            <Button fx:id="accessoriesBTN" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+            <Button fx:id="powersupplyBTN" alignment="CENTER" contentDisplay="BOTTOM" graphicTextGap="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onPowerSupply_Pressed" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="Power Supply" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                <graphic>
-                  <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/accessories.png" />
+                        <Image url="@../images/power-supply.png" />
                      </image>
                   </ImageView>
                </graphic>
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
             </Button>
-            <Button fx:id="computerBTN" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+            <Button fx:id="caseBTN" alignment="CENTER" contentDisplay="BOTTOM" graphicTextGap="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onCase_Pressed" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="Case" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                <graphic>
-                  <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/computer.png" />
+                        <Image url="@../images/case.png" />
                      </image>
                   </ImageView>
                </graphic>
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
             </Button>
-            <Button fx:id="mountingBTN" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+            <Button fx:id="devicesBTN" alignment="CENTER" contentDisplay="BOTTOM" graphicTextGap="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onDevices_Pressed" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="Other Devices" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                <graphic>
-                  <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/mounting.png" />
+                        <Image url="@../images/devices.png" />
                      </image>
                   </ImageView>
                </graphic>
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
             </Button>
             <ListView fx:id="productsLIST" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="3" GridPane.rowIndex="3" GridPane.rowSpan="2" />
             <Button fx:id="addBTN" mnemonicParsing="false" GridPane.columnIndex="3" GridPane.rowIndex="3" GridPane.rowSpan="2">
@@ -280,17 +307,17 @@
             </HBox>
             <VBox spacing="5.0" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                <children>
-                  <Button fx:id="quantityBTN" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Change quantity" />
-                  <Button fx:id="deleteBTN" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Remove product" />
-                  <Button fx:id="priceBTN" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Change price" />
-                  <Button fx:id="discountBTN" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Apply discounts" />
-                  <Button fx:id="taxesBTN" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Apply taxes (IGIC 7%)" />
+                  <Button fx:id="quantityBTN" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#changeCuantity" text="Change quantity" />
+                  <Button fx:id="deleteBTN" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#removeProduct" text="Remove product" />
+                  <Button fx:id="priceBTN" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#changePrice" text="Change price" />
+                  <Button fx:id="discountBTN" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#applyDiscounts" text="Apply discounts" />
+                  <Button fx:id="taxesBTN" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#applyTaxes" text="Apply taxes (IGIC 7%)" />
                </children>
                <GridPane.margin>
                   <Insets top="10.0" />
                </GridPane.margin>
             </VBox>
-            <Button fx:id="purchaseBTN" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="55.0" text="Finalize purchase" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+            <Button fx:id="purchaseBTN" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onPayAction" prefHeight="55.0" text="Finalize purchase" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </GridPane.margin>
