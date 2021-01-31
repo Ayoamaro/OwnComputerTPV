@@ -143,7 +143,7 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="cpuBTN" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" GridPane.halignment="CENTER">
+            <Button fx:id="cpuBTN" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" onAction="#onCPU_Pressed" prefHeight="100.0" prefWidth="100.0" GridPane.halignment="CENTER">
                <graphic>
                   <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -152,7 +152,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="motherboardBTN" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+            <Button fx:id="motherboardBTN" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" onAction="#onMotherboard_Pressed" prefHeight="100.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.halignment="CENTER">
                <graphic>
                   <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -161,7 +161,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="heatsinkBTN" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.halignment="CENTER">
+            <Button fx:id="heatsinkBTN" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" onAction="#onHeatSkin_Pressed" prefHeight="100.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.halignment="CENTER">
                <graphic>
                   <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -170,7 +170,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="memoryramBTN" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <Button fx:id="memoryramBTN" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" onAction="#onRAM_Pressed" prefHeight="100.0" prefWidth="100.0" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                <graphic>
                   <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -179,7 +179,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="graphiccardBTN" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <Button fx:id="graphiccardBTN" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" onAction="#onGraphicCard_Pressed" prefHeight="100.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                <graphic>
                   <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -188,7 +188,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="harddiskBTN" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <Button fx:id="harddiskBTN" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" onAction="#onMemory_Pressed" prefHeight="100.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                <graphic>
                   <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -197,7 +197,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="accessoriesBTN" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+            <Button fx:id="accessoriesBTN" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" onAction="#onAccesories_Pressed" prefHeight="100.0" prefWidth="100.0" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                <graphic>
                   <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -206,7 +206,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="computerBTN" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+            <Button fx:id="computerBTN" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" onAction="#onComputer_Pressed" prefHeight="100.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                <graphic>
                   <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -215,7 +215,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="mountingBTN" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+            <Button fx:id="mountingBTN" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" onAction="#onMounting_Pressed" prefHeight="100.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                <graphic>
                   <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -280,17 +280,17 @@
             </HBox>
             <VBox spacing="5.0" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                <children>
-                  <Button fx:id="quantityBTN" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Change quantity" />
-                  <Button fx:id="deleteBTN" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Remove product" />
-                  <Button fx:id="priceBTN" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Change price" />
-                  <Button fx:id="discountBTN" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Apply discounts" />
-                  <Button fx:id="taxesBTN" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Apply taxes (IGIC 7%)" />
+                  <Button fx:id="quantityBTN" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#changeCuantity" text="Change quantity" />
+                  <Button fx:id="deleteBTN" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#removeProduct" text="Remove product" />
+                  <Button fx:id="priceBTN" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#changePrice" text="Change price" />
+                  <Button fx:id="discountBTN" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#applyDiscounts" text="Apply discounts" />
+                  <Button fx:id="taxesBTN" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#applyTaxes" text="Apply taxes (IGIC 7%)" />
                </children>
                <GridPane.margin>
                   <Insets top="10.0" />
                </GridPane.margin>
             </VBox>
-            <Button fx:id="purchaseBTN" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="55.0" text="Finalize purchase" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+            <Button fx:id="purchaseBTN" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onPayAction" prefHeight="55.0" text="Finalize purchase" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </GridPane.margin>
