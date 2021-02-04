@@ -5,7 +5,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import dad.javafx.util.Component;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -19,6 +18,8 @@ import javafx.scene.control.TextField;
 
 public class Controller implements Initializable {
 
+	private ObservableList<Component> component_list;
+	
 	// VIEW
 	@FXML
 	private BorderPane view;
@@ -26,23 +27,11 @@ public class Controller implements Initializable {
 	private Button cpuBTN, motherboardBTN, heatsinkBTN, memoryramBTN, graphiccardBTN, harddiskBTN, powersupplyBTN,
 			caseBTN, devicesBTN, addBTN, quantityBTN, deleteBTN, priceBTN, discountBTN, taxesBTN, purchaseBTN;
 	@FXML
-	private TableView<Component> tableviewComponents;
-
+	private TableView<Component> tableviewComponents, tableviewTicket;
 	@FXML
-	private TableColumn<Component, String> nameColumn_Comp;
-
+	private TableColumn<Component, String> nameColumn_Comp, nameColumn_Ticket;
 	@FXML
-	private TableColumn<Component, Double> priceColumn_Comp;
-
-	@FXML
-	private TableView<Component> tableviewTicket;
-
-	@FXML
-	private TableColumn<Component, String> nameColumn_Ticket;
-
-	@FXML
-	private TableColumn<Component, Double> priceColumn_Ticket;
-
+	private TableColumn<Component, Double> priceColumn_Comp, priceColumn_Ticket;
 	@FXML
 	private TextField finalpriceTXT;
 
@@ -53,77 +42,60 @@ public class Controller implements Initializable {
 		loader.load();
 	}
 
-	private ObservableList<Component> component_list;
-
 	// INITIALIZE
 	@Override
-	public void initialize(URL location, ResourceBundle resources) {
-	}
+	public void initialize(URL location, ResourceBundle resources) { }
+
+	
+	@FXML
+	void onCPU_Pressed(ActionEvent event) { }
 
 	@FXML
-	void onCPU_Pressed(ActionEvent event) {
-	}
+	void onMotherboard_Pressed(ActionEvent event) { }
 
 	@FXML
-	void onMotherboard_Pressed(ActionEvent event) {
-	}
+	void onHeatSkin_Pressed(ActionEvent event) { }
 
 	@FXML
-	void onHeatSkin_Pressed(ActionEvent event) {
-	}
+	void onRAM_Pressed(ActionEvent event) { }
 
 	@FXML
-	void onRAM_Pressed(ActionEvent event) {
-	}
+	void onGraphicCard_Pressed(ActionEvent event) { }
 
 	@FXML
-	void onGraphicCard_Pressed(ActionEvent event) {
-	}
+	void onMemory_Pressed(ActionEvent event) { }
 
 	@FXML
-	void onMemory_Pressed(ActionEvent event) {
-	}
+	void onPowerSupply_Pressed(ActionEvent event) { }
 
 	@FXML
-	void onPowerSupply_Pressed(ActionEvent event) {
-	}
+	void onCase_Pressed(ActionEvent event) { }
 
 	@FXML
-	void onCase_Pressed(ActionEvent event) {
-	}
+	void onDevices_Pressed(ActionEvent event) { }
 
 	@FXML
-	void onDevices_Pressed(ActionEvent event) {
-	}
+	void addProduct(ActionEvent event) { }
 
 	@FXML
-	void addProduct(ActionEvent event) {
-	}
+	void changeCuantity(ActionEvent event) { }
 
 	@FXML
-	void changeCuantity(ActionEvent event) {
-	}
+	void removeProduct(ActionEvent event) { }
 
 	@FXML
-	void removeProduct(ActionEvent event) {
-	}
+	void changePrice(ActionEvent event) { }
 
 	@FXML
-	void changePrice(ActionEvent event) {
-	}
+	void applyDiscounts(ActionEvent event) { }
 
 	@FXML
-	void applyDiscounts(ActionEvent event) {
-	}
+	void applyTaxes(ActionEvent event) { }
 
 	@FXML
-	void applyTaxes(ActionEvent event) {
-	}
+	void onPayAction(ActionEvent event) { }
 
-	@FXML
-	void onPayAction(ActionEvent event) {
-	}
-
+	
 	// SHOW VIEW
 	public BorderPane getView() {
 		return view;

@@ -23,7 +23,7 @@ public class App extends Application {
 		primaryStage.setScene(escena);
 		primaryStage.setTitle("OwnComputerTPV");
 		primaryStage.getIcons().add(new Image("/images/owncomputer-icon.png"));
-		primaryStage.setResizable(false);
+		// primaryStage.setResizable(false);
 		primaryStage.show();
 	}
 	
