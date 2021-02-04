@@ -32,7 +32,14 @@ public class WelcomeController implements Initializable {
 
 	// INITIALIZE
 	@Override
-	public void initialize(URL location, ResourceBundle resources) { }
+	public void initialize(URL location, ResourceBundle resources) { 
+		/*usercodeTXT.textProperty().addListener((obs, oldText, newText) -> {
+			loginBTN.setDisable(newText.isEmpty());
+	    });
+	    
+	    ON FXML VIEW (loginBTN): disable="${usercodeTXT.text.empty}"
+	    */
+	}
 	
 	
 	@FXML
