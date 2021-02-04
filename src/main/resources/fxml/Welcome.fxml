@@ -14,8 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<GridPane minHeight="500.0" minWidth="500.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/15.0.1">
+<GridPane minHeight="500.0" minWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <rowConstraints>
       <RowConstraints valignment="CENTER" vgrow="ALWAYS" />
       <RowConstraints valignment="CENTER" vgrow="ALWAYS" />
@@ -32,9 +31,9 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="159.0" fitWidth="199.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/devices.png" />
+            <Image url="@../images/icono.png" />
          </image>
       </ImageView>
       <HBox alignment="CENTER" GridPane.rowIndex="3">
