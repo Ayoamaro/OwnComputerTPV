@@ -1,4 +1,4 @@
-package dad.javafx.owncomputer;
+package dad.javafx.owncomputer.welcome;
 
 public class Main {
 

@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane minHeight="550.0" minWidth="700.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane fx:id="view" minHeight="550.0" minWidth="700.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <rowConstraints>
       <RowConstraints valignment="CENTER" vgrow="ALWAYS" />
       <RowConstraints valignment="CENTER" vgrow="ALWAYS" />
@@ -52,7 +52,7 @@
                   <Font name="System Italic" size="12.0" />
                </font>
             </Label>
-            <TextField maxWidth="1.7976931348623157E308" prefWidth="150.0" />
+            <TextField fx:id="usercodeTXT" maxWidth="1.7976931348623157E308" prefWidth="150.0" />
          </children>
          <GridPane.margin>
             <Insets top="20.0" />
@@ -60,12 +60,12 @@
       </HBox>
       <HBox alignment="CENTER" GridPane.rowIndex="3">
          <children>
-            <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" minWidth="150.0" mnemonicParsing="false" text="LOGIN" textAlignment="CENTER">
+            <Button fx:id="loginBTN" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" minWidth="150.0" mnemonicParsing="false" onAction="#onLogin" text="LOGIN" textAlignment="CENTER">
                <HBox.margin>
                   <Insets right="50.0" />
                </HBox.margin>
             </Button>
-            <Button alignment="CENTER" graphicTextGap="0.0" minWidth="150.0" mnemonicParsing="false" text="RESET" />
+            <Button fx:id="resetBTN" alignment="CENTER" graphicTextGap="0.0" minWidth="150.0" mnemonicParsing="false" onAction="#onReset" text="RESET" />
          </children>
          <GridPane.margin>
             <Insets bottom="20.0" top="20.0" />

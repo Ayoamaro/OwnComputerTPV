@@ -1,4 +1,4 @@
-package dad.javafx.owncomputer;
+package dad.javafx.owncomputer.main;
 
 import java.io.IOException;
 import java.net.URL;
@@ -16,7 +16,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
-public class Controller implements Initializable {
+public class MainController implements Initializable {
 
 	private ObservableList<Component> component_list;
 	
@@ -36,7 +36,7 @@ public class Controller implements Initializable {
 	private TextField finalpriceTXT;
 
 	// CONSTRUCTOR
-	public Controller() throws IOException {
+	public MainController() throws IOException {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Main.fxml"));
 		loader.setController(this);
 		loader.load();
