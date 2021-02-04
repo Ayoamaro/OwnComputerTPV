@@ -41,8 +41,9 @@ public class WelcomeController implements Initializable {
 	}
 	
 	@FXML
-	void onReset(ActionEvent event) { }
-	
+	void onReset(ActionEvent event) { 
+		usercodeTXT.setText("");
+	}
 	
 	// SHOW VIEW
 	public GridPane getView() {
