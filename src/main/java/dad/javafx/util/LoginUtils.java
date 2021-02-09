@@ -16,7 +16,7 @@ import javafx.stage.Stage;
  * @author Ayoze Amaro
  *
  */
-public class DBUtils {
+public class LoginUtils {
 
 	public static void readUsersFile(ArrayList<String> linesCSV) {
 		try {

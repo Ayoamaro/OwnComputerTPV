@@ -5,7 +5,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-import dad.javafx.util.DBUtils;
+import dad.javafx.util.LoginUtils;
 import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -43,7 +43,7 @@ public class WelcomeController implements Initializable {
 	// INITIALIZE
 	@Override
 	public void initialize(URL location, ResourceBundle resources) { 
-		DBUtils.readUsersFile(linesCSV);
+		LoginUtils.readUsersFile(linesCSV);
 		
 		Bindings.bindBidirectional(userTXT.textProperty(), model.userProperty());
 		Bindings.bindBidirectional(pswdTXT.textProperty(), model.pswdProperty());
@@ -68,7 +68,7 @@ public class WelcomeController implements Initializable {
 		if (verify == true) { 
 			App.goToOwnComputer(); 
 		} else {
-			DBUtils.wrongCredentials();
+			LoginUtils.wrongCredentials();
 		}
 	}
 	
