@@ -20,6 +20,7 @@
       <RowConstraints valignment="CENTER" vgrow="ALWAYS" />
       <RowConstraints valignment="CENTER" vgrow="ALWAYS" />
       <RowConstraints valignment="CENTER" vgrow="ALWAYS" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
       <RowConstraints valignment="CENTER" vgrow="ALWAYS" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="NEVER" />
    </rowConstraints>
@@ -44,7 +45,26 @@
       </VBox>
       <HBox alignment="CENTER" GridPane.rowIndex="2">
          <children>
-            <Label text="Enter user code:">
+            <Label text="User : ">
+               <HBox.margin>
+                  <Insets right="5.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="usercodeTXT" maxWidth="1.7976931348623157E308" prefWidth="150.0">
+               <HBox.margin>
+                  <Insets left="26.0" />
+               </HBox.margin></TextField>
+         </children>
+         <GridPane.margin>
+            <Insets top="20.0" />
+         </GridPane.margin>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
+         <children>
+            <Label text="Password :">
                <HBox.margin>
                   <Insets right="10.0" />
                </HBox.margin>
@@ -52,13 +72,10 @@
                   <Font name="System Italic" size="12.0" />
                </font>
             </Label>
-            <TextField fx:id="usercodeTXT" maxWidth="1.7976931348623157E308" prefWidth="150.0" />
+            <TextField alignment="CENTER" prefWidth="150.0" />
          </children>
-         <GridPane.margin>
-            <Insets top="20.0" />
-         </GridPane.margin>
       </HBox>
-      <HBox alignment="CENTER" GridPane.rowIndex="3">
+      <HBox alignment="CENTER" GridPane.rowIndex="4">
          <children>
             <Button fx:id="loginBTN" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" minWidth="150.0" mnemonicParsing="false" onAction="#onLogin" text="LOGIN" textAlignment="CENTER">
                <HBox.margin>
@@ -71,7 +88,7 @@
             <Insets bottom="20.0" top="20.0" />
          </GridPane.margin>
       </HBox>
-      <VBox alignment="CENTER" GridPane.rowIndex="4">
+      <VBox alignment="CENTER" GridPane.rowIndex="5">
          <children>
             <Separator prefWidth="200.0" />
             <Label text="© 2021 - All rights reserved to OwnComputer">
