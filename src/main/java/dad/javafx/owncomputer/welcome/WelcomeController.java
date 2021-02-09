@@ -13,7 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 
 public class WelcomeController implements Initializable {
-
+	
 	// VIEW
 	@FXML
 	private GridPane view;
@@ -32,14 +32,7 @@ public class WelcomeController implements Initializable {
 
 	// INITIALIZE
 	@Override
-	public void initialize(URL location, ResourceBundle resources) { 
-		/*usercodeTXT.textProperty().addListener((obs, oldText, newText) -> {
-			loginBTN.setDisable(newText.isEmpty());
-	    });
-	    
-	    ON FXML VIEW (loginBTN): disable="${usercodeTXT.text.empty}"
-	    */
-	}
+	public void initialize(URL location, ResourceBundle resources) {  }
 	
 	
 	@FXML
