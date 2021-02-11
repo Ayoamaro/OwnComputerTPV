@@ -30,7 +30,6 @@ public class App extends Application {
 		primaryStage.setScene(welcomeScene);
 		primaryStage.setTitle("¡Welcome to OwnComputerTPV!");
 		primaryStage.getIcons().add(new Image("/images/owncomputer-icon.png"));
-		primaryStage.setResizable(false);
 		primaryStage.show();
 	}
 	
