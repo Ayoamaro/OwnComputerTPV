@@ -10,7 +10,7 @@ public class DbConnection {
 			Connection con = null;
 			try {
 				Class.forName("org.sqlite.JDBC");
-				con = DriverManager.getConnection("jdbc:slite:ComponentsBD.db");
+				con = DriverManager.getConnection("jdbc:sqlite:src\\main\\resources\\database\\ComponentsBD.db");
 				System.out.println("Connected!");
 			} catch (ClassNotFoundException | SQLException e) {
 				// TODO Auto-generated catch block
