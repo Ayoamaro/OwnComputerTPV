@@ -220,30 +220,12 @@
                   <Font name="System Bold" size="10.0" />
                </font>
             </Button>
-            <Button fx:id="addBTN" mnemonicParsing="false" onAction="#addProduct" GridPane.columnIndex="3" GridPane.rowIndex="3" GridPane.rowSpan="2">
-               <graphic>
-                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/add-component.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
             <TableView fx:id="tableviewComponents" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="3" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="3" GridPane.rowSpan="2" GridPane.vgrow="SOMETIMES">
               <columns>
                 <TableColumn fx:id="nameColumn_Comp" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="-1.0" text="C1" />
                 <TableColumn fx:id="priceColumn_Comp" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="-1.0" text="C2" />
               </columns>
             </TableView>
-            <Button fx:id="addBTN1" layoutX="298.0" layoutY="504.0" mnemonicParsing="false" onAction="#addProduct" GridPane.columnIndex="3" GridPane.rowIndex="4">
-               <graphic>
-                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/remove.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
          </children>
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -301,6 +283,28 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="20.0" />
                </GridPane.margin>
             </Button>
+            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
+               <children>
+                  <Button fx:id="addBTN" mnemonicParsing="false" onAction="#addProduct">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/add-component.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="addBTN1" mnemonicParsing="false" onAction="#addProduct">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/remove.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
          </children>
          <BorderPane.margin>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
