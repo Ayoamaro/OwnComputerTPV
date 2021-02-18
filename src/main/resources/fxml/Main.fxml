@@ -250,7 +250,6 @@
          <children>
             <TableView fx:id="tableviewTicket" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.hgrow="SOMETIMES" GridPane.rowSpan="2" GridPane.vgrow="SOMETIMES">
                <columns>
-                  <TableColumn fx:id="quantityColumn_Ticket" prefWidth="79.0" text="Quantity" />
                   <TableColumn fx:id="nameColumn_Ticket" text="Component Name" />
                   <TableColumn fx:id="priceColumn_Ticket" text="Price (€)" />
                </columns>

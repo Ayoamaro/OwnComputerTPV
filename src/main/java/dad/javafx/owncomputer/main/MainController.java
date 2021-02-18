@@ -55,6 +55,8 @@ public class MainController implements Initializable {
 		
 		tableviewComponents.itemsProperty().bind(component_List);
 		
+		nameColumn_Ticket.setCellValueFactory(new PropertyValueFactory<Component, String>("name"));
+		priceColumn_Ticket.setCellValueFactory(new PropertyValueFactory<Component, Number>("price"));
 		nameColumn_Comp.setCellValueFactory(new PropertyValueFactory<Component, String>("name"));
 		priceColumn_Comp.setCellValueFactory(new PropertyValueFactory<Component, Number>("price"));
 	 }
@@ -132,13 +134,22 @@ public class MainController implements Initializable {
 	}
 
 	@FXML
-	void onAddProduct(ActionEvent event) { }
+	void onAddProduct(ActionEvent event) { 
+		Component selected = tableviewComponents.getSelectionModel().getSelectedItem();
+		Component addComponent = new Component(selected.getName().toString(), selected.getPrice());
+		
+		tableviewTicket.getItems().add(addComponent);
+	}
+	
+	@FXML
+	void onRemoveProduct(ActionEvent event) { 
+		Component lastComponent = tableviewTicket.getSelectionModel().getSelectedItem();
+		
+		tableviewTicket.getItems().remove(lastComponent);
+	}
 
 	@FXML
 	void onFinishAction(ActionEvent event) { }
-
-	@FXML
-	void onRemoveProduct(ActionEvent event) { }
 
 	@FXML
 	void onPayAction(ActionEvent event) { }
