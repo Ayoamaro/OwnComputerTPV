@@ -1,12 +1,19 @@
 package dad.javafx.owncomputer.util;
 
 import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class Component {
 	
 	private StringProperty name;
 	private DoubleProperty price;
+	
+	public Component(String name, Double price) {
+		this.name = new SimpleStringProperty(name);
+		this.price = new SimpleDoubleProperty(price);
+	}
 	
 	public StringProperty nameProperty() {
 		return this.name;

@@ -1,6 +1,7 @@
 package dad.database;
 
 import java.io.IOException;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -20,16 +21,13 @@ public class DBUtils {
 		java.sql.Connection con =  DBConnection.connect();
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		Component component;
+		
 		try {
-			String sql = "Select nameCPU, price from CPU";
+			String sql = "Select nameCPU, priceCPU from CPU";
 			ps = ((java.sql.Connection) con).prepareStatement(sql);
 			rs = ps.executeQuery();
 			while(rs.next()) {
-				component = new Component();
-				component.setName(rs.getString("nameCPU"));
-				component.setPrice(Double.parseDouble(rs.getString("price")));
-				list.add(component);
+				list.add(new Component(rs.getString("nameCPU"), rs.getDouble("priceCPU")));
 			}
 		}catch(SQLException e) {
 			System.out.println(e.toString());
@@ -50,16 +48,13 @@ public class DBUtils {
 		java.sql.Connection con =  DBConnection.connect();
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		Component component;
+		
 		try {
-			String sql = "Select name, price from motherboard";
+			String sql = "SELECT nameMother, priceMother FROM motherboard";
 			ps = ((java.sql.Connection) con).prepareStatement(sql);
 			rs = ps.executeQuery();
 			while(rs.next()) {
-				component = new Component();
-				component.setName(rs.getString("name"));
-				component.setPrice(Double.parseDouble(rs.getString("price")));
-				list.add(component);
+				list.add(new Component(rs.getString("nameMother"), rs.getDouble("priceMother")));
 			}
 		}catch(SQLException e) {
 			System.out.println(e.toString());
@@ -80,16 +75,13 @@ public class DBUtils {
 		java.sql.Connection con =  DBConnection.connect();
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		Component component;
+
 		try {
-			String sql = "Select nameHeat, priceHeat from heatSinks";
+			String sql = "SELECT nameHeat, priceHeat FROM heatSinks";
 			ps = ((java.sql.Connection) con).prepareStatement(sql);
 			rs = ps.executeQuery();
 			while(rs.next()) {
-				component = new Component();
-				component.setName(rs.getString("nameHeat"));
-				component.setPrice(Double.parseDouble(rs.getString("priceHeat")));
-				list.add(component);
+				list.add(new Component(rs.getString("nameHeat"), rs.getDouble("priceHeat")));
 			}
 		}catch(SQLException e) {
 			System.out.println(e.toString());
@@ -110,16 +102,13 @@ public class DBUtils {
 		java.sql.Connection con =  DBConnection.connect();
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		Component component;
+
 		try {
-			String sql = "Select nameRam, price from ram";
+			String sql = "SELECT nameRam, priceRam FROM ram";
 			ps = ((java.sql.Connection) con).prepareStatement(sql);
 			rs = ps.executeQuery();
 			while(rs.next()) {
-				component = new Component();
-				component.setName(rs.getString("nameRam"));
-				component.setPrice(Double.parseDouble(rs.getString("price")));
-				list.add(component);
+				list.add(new Component(rs.getString("nameRam"), rs.getDouble("priceRam")));
 			}
 		}catch(SQLException e) {
 			System.out.println(e.toString());
@@ -140,16 +129,13 @@ public class DBUtils {
 		java.sql.Connection con =  DBConnection.connect();
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		Component component;
+
 		try {
-			String sql = "Select nameGraphic, price from graphicCard";
+			String sql = "SELECT nameGraphic, priceGraphic FROM graphicCard";
 			ps = ((java.sql.Connection) con).prepareStatement(sql);
 			rs = ps.executeQuery();
 			while(rs.next()) {
-				component = new Component();
-				component.setName(rs.getString("nameGraphic"));
-				component.setPrice(Double.parseDouble(rs.getString("price")));
-				list.add(component);
+				list.add(new Component(rs.getString("nameGraphic"), rs.getDouble("priceGraphic")));
 			}
 		}catch(SQLException e) {
 			System.out.println(e.toString());
@@ -170,16 +156,13 @@ public class DBUtils {
 		java.sql.Connection con =  DBConnection.connect();
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		Component component;
+
 		try {
-			String sql = "Select nameDisk, price from disk";
+			String sql = "SELECT nameDisk, priceDisk FROM disk";
 			ps = ((java.sql.Connection) con).prepareStatement(sql);
 			rs = ps.executeQuery();
 			while(rs.next()) {
-				component = new Component();
-				component.setName(rs.getString("nameDisk"));
-				component.setPrice(Double.parseDouble(rs.getString("price")));
-				list.add(component);
+				list.add(new Component(rs.getString("nameDisk"), rs.getDouble("priceDisk")));
 			}
 		}catch(SQLException e) {
 			System.out.println(e.toString());
@@ -200,16 +183,13 @@ public class DBUtils {
 		java.sql.Connection con =  DBConnection.connect();
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		Component component;
+
 		try {
-			String sql = "Select namePower, price from powerSupply";
+			String sql = "SELECT namePower, pricePower FROM powerSupply";
 			ps = ((java.sql.Connection) con).prepareStatement(sql);
 			rs = ps.executeQuery();
 			while(rs.next()) {
-				component = new Component();
-				component.setName(rs.getString("namePower"));
-				component.setPrice(Double.parseDouble(rs.getString("price")));
-				list.add(component);
+				list.add(new Component(rs.getString("namePower"), rs.getDouble("pricePower")));
 			}
 		}catch(SQLException e) {
 			System.out.println(e.toString());
@@ -230,16 +210,13 @@ public class DBUtils {
 		java.sql.Connection con =  DBConnection.connect();
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		Component component;
+		
 		try {
-			String sql = "Select nameCase, priceCase from case";
+			String sql = "SELECT nameCase, priceCase FROM caseDesktop";
 			ps = ((java.sql.Connection) con).prepareStatement(sql);
 			rs = ps.executeQuery();
 			while(rs.next()) {
-				component = new Component();
-				component.setName(rs.getString("nameCase"));
-				component.setPrice(Double.parseDouble(rs.getString("priceCase")));
-				list.add(component);
+				list.add(new Component(rs.getString("nameCase"), rs.getDouble("priceCase")));
 			}
 		}catch(SQLException e) {
 			System.out.println(e.toString());
@@ -252,7 +229,6 @@ public class DBUtils {
 				System.out.println(e.toString());
 			}
 		}
-		
 	}
 	
 	public static void fillOthersTable(List<Component> list) throws IOException {
@@ -260,16 +236,13 @@ public class DBUtils {
 		java.sql.Connection con =  DBConnection.connect();
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		Component component;
+
 		try {
-			String sql = "Select nameScreen, price from screens";
+			String sql = "SELECT nameScreen, priceScreen FROM screens";
 			ps = ((java.sql.Connection) con).prepareStatement(sql);
 			rs = ps.executeQuery();
 			while(rs.next()) {
-				component = new Component();
-				component.setName(rs.getString("nameScreen"));
-				component.setPrice(Double.parseDouble(rs.getString("price")));
-				list.add(component);
+				list.add(new Component(rs.getString("nameScreen"), rs.getDouble("priceScreen")));
 			}
 		}catch(SQLException e) {
 			System.out.println(e.toString());
@@ -284,5 +257,4 @@ public class DBUtils {
 		}
 		
 	}
-
 }

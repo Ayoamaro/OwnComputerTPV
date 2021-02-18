@@ -85,7 +85,6 @@ public class MainController implements Initializable {
 
 	@FXML
 	void onRAM_Pressed(ActionEvent event) throws IOException {
-		
 		component_List.clear();
 		list_component.clear();
 		DBUtils.fillRAMTable(list_component);

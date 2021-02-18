@@ -222,9 +222,12 @@
             </Button>
             <TableView fx:id="tableviewComponents" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="3" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="3" GridPane.rowSpan="2" GridPane.vgrow="SOMETIMES">
               <columns>
-                <TableColumn fx:id="nameColumn_Comp" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="-1.0" text="C1" />
-                <TableColumn fx:id="priceColumn_Comp" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="-1.0" text="C2" />
+                <TableColumn fx:id="nameColumn_Comp" text="Component Name" />
+                <TableColumn fx:id="priceColumn_Comp" text="Price (€)" />
               </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
             </TableView>
          </children>
          <padding>
@@ -247,9 +250,13 @@
          <children>
             <TableView fx:id="tableviewTicket" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.hgrow="SOMETIMES" GridPane.rowSpan="2" GridPane.vgrow="SOMETIMES">
                <columns>
-                  <TableColumn fx:id="nameColumn_Ticket" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="-1.0" text="C1" />
-                  <TableColumn fx:id="priceColumn_Ticket" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="-1.0" text="C2" />
+                  <TableColumn fx:id="quantityColumn_Ticket" prefWidth="79.0" text="Quantity" />
+                  <TableColumn fx:id="nameColumn_Ticket" text="Component Name" />
+                  <TableColumn fx:id="priceColumn_Ticket" text="Price (€)" />
                </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
             </TableView>
             <HBox alignment="TOP_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                <children>
@@ -302,6 +309,9 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
                   </Button>
                </children>
             </HBox>
