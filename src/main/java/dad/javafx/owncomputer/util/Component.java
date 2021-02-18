@@ -1,4 +1,4 @@
-package dad.javafx.util;
+package dad.javafx.owncomputer.util;
 
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.StringProperty;
