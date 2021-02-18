@@ -10,10 +10,8 @@ public class App extends Application {
 
 	private static Stage primaryStage;
 	
-	private WelcomeController welcomeController;
 	private MainController mainController;
 	
-	private static Scene welcomeScene;
 	private static Scene mainScene;
 	
 	@Override
@@ -22,12 +20,10 @@ public class App extends Application {
 		App.primaryStage = primaryStage;
 		
 		mainController = new MainController();
-		welcomeController = new WelcomeController();
 		
 		mainScene = new Scene(mainController.getView());
-		welcomeScene = new Scene(welcomeController.getView());
 		
-		primaryStage.setScene(welcomeScene);
+		primaryStage.setScene(mainScene);
 		primaryStage.setTitle("¡Welcome to OwnComputerTPV!");
 		primaryStage.getIcons().add(new Image("/images/owncomputer-icon.png"));
 		primaryStage.show();
