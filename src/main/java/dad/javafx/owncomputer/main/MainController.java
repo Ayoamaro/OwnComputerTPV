@@ -9,10 +9,7 @@ import java.util.ResourceBundle;
 import dad.database.DBUtils;
 import dad.javafx.owncomputer.util.Component;
 import javafx.beans.property.ListProperty;
-import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleListProperty;
-import javafx.beans.property.SimpleObjectProperty;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -35,7 +32,7 @@ public class MainController implements Initializable {
 	private BorderPane view;
 	@FXML
 	private Button cpuBTN, motherboardBTN, heatsinkBTN, memoryramBTN, graphiccardBTN, harddiskBTN, powersupplyBTN,
-			caseBTN, devicesBTN, addBTN, quantityBTN, deleteBTN, priceBTN, discountBTN, taxesBTN, purchaseBTN;
+			caseBTN, devicesBTN, addBTN, removeBTN, finishBTN;
 	@FXML
 	private TableView<Component> tableviewComponents, tableviewTicket;
 	@FXML
@@ -55,10 +52,6 @@ public class MainController implements Initializable {
 	// INITIALIZE
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		
-//		ticket.addListener((o, ov, nv) -> OnTicketChanged(o, ov, nv));
-//		
-//		tableviewTicket.itemsProperty().bindBidirectional(ticket.listComponentsProperty().get());
 		
 		tableviewComponents.itemsProperty().bind(component_List);
 		
@@ -140,13 +133,13 @@ public class MainController implements Initializable {
 	}
 
 	@FXML
-	void addProduct(ActionEvent event) { }
+	void onAddProduct(ActionEvent event) { }
 
 	@FXML
-	void changeCuantity(ActionEvent event) { }
+	void onFinishAction(ActionEvent event) { }
 
 	@FXML
-	void removeProduct(ActionEvent event) { }
+	void onRemoveProduct(ActionEvent event) { }
 
 	@FXML
 	void onPayAction(ActionEvent event) { }

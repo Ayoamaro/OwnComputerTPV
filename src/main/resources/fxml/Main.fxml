@@ -278,14 +278,14 @@
                   <Insets right="10.0" />
                </padding>
             </HBox>
-            <Button fx:id="purchaseBTN" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" minHeight="55.0" mnemonicParsing="false" onAction="#onPayAction" text="Create budget" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+            <Button fx:id="finishBTN" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" minHeight="55.0" mnemonicParsing="false" onAction="#onFinishAction" text="Create budget" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="20.0" />
                </GridPane.margin>
             </Button>
             <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
                <children>
-                  <Button fx:id="addBTN" mnemonicParsing="false" onAction="#addProduct">
+                  <Button fx:id="addBTN" mnemonicParsing="false" onAction="#onAddProduct">
                      <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -294,7 +294,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="addBTN1" mnemonicParsing="false" onAction="#addProduct">
+                  <Button fx:id="removeBTN" mnemonicParsing="false" onAction="#onRemoveProduct">
                      <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>

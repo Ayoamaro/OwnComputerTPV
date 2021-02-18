@@ -6,8 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-import com.sun.jdi.connect.spi.Connection;
-
 import dad.javafx.owncomputer.util.Component;
 
 public class DBUtils {
@@ -19,7 +17,7 @@ public class DBUtils {
 	
 	public static void fillCPUTable(List<Component> list) throws IOException {
 		
-		java.sql.Connection con =  DbConnection.connect();
+		java.sql.Connection con =  DBConnection.connect();
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		Component component;
@@ -49,7 +47,7 @@ public class DBUtils {
 	
 	public static void fillMotherboardTable(List<Component> list) throws IOException {
 		
-		java.sql.Connection con =  DbConnection.connect();
+		java.sql.Connection con =  DBConnection.connect();
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		Component component;
@@ -79,7 +77,7 @@ public class DBUtils {
 	
 	public static void fillHeatSinksTable(List<Component> list) throws IOException {
 		
-		java.sql.Connection con =  DbConnection.connect();
+		java.sql.Connection con =  DBConnection.connect();
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		Component component;
@@ -109,7 +107,7 @@ public class DBUtils {
 	
 	public static void fillRAMTable(List<Component> list) throws IOException {
 		
-		java.sql.Connection con =  DbConnection.connect();
+		java.sql.Connection con =  DBConnection.connect();
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		Component component;
@@ -139,7 +137,7 @@ public class DBUtils {
 	
 	public static void fillGraphicsTable(List<Component> list) throws IOException {
 		
-		java.sql.Connection con =  DbConnection.connect();
+		java.sql.Connection con =  DBConnection.connect();
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		Component component;
@@ -169,7 +167,7 @@ public class DBUtils {
 	
 	public static void fillHardDiskTable(List<Component> list) throws IOException {
 		
-		java.sql.Connection con =  DbConnection.connect();
+		java.sql.Connection con =  DBConnection.connect();
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		Component component;
@@ -199,7 +197,7 @@ public class DBUtils {
 	
 	public static void fillPowerSupplyTable(List<Component> list) throws IOException {
 		
-		java.sql.Connection con =  DbConnection.connect();
+		java.sql.Connection con =  DBConnection.connect();
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		Component component;
@@ -229,7 +227,7 @@ public class DBUtils {
 	
 	public static void fillCaseTable(List<Component> list) throws IOException {
 		
-		java.sql.Connection con =  DbConnection.connect();
+		java.sql.Connection con =  DBConnection.connect();
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		Component component;
@@ -259,7 +257,7 @@ public class DBUtils {
 	
 	public static void fillOthersTable(List<Component> list) throws IOException {
 		
-		java.sql.Connection con =  DbConnection.connect();
+		java.sql.Connection con =  DBConnection.connect();
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		Component component;
