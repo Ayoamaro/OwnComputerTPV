@@ -1,6 +1,5 @@
-package dad.javafx.owncomputer.welcome;
+package dad.javafx.owncomputer.main;
 
-import dad.javafx.owncomputer.main.MainController;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;

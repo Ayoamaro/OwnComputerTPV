@@ -2,23 +2,33 @@ package dad.javafx.owncomputer.main;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
-import dad.javafx.owncomputer.util.*;
-import javafx.collections.ObservableList;
+import dad.database.DBUtils;
+import dad.javafx.owncomputer.util.Component;
+import javafx.beans.property.ListProperty;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleListProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.BorderPane;
 
 public class MainController implements Initializable {
-
-	private ObservableList<Component> component_list;
+	
+	private ListProperty<Component> component_List = new SimpleListProperty<Component>(FXCollections.observableArrayList());
+	private List<Component> list_component = new ArrayList<Component>();
 	
 	// VIEW
 	@FXML
@@ -31,7 +41,7 @@ public class MainController implements Initializable {
 	@FXML
 	private TableColumn<Component, String> nameColumn_Comp, nameColumn_Ticket;
 	@FXML
-	private TableColumn<Component, Double> priceColumn_Comp, priceColumn_Ticket;
+	private TableColumn<Component, Number> priceColumn_Comp, priceColumn_Ticket;
 	@FXML
 	private TextField finalpriceTXT;
 
@@ -44,35 +54,90 @@ public class MainController implements Initializable {
 
 	// INITIALIZE
 	@Override
-	public void initialize(URL location, ResourceBundle resources) { }
-
-	
-	@FXML
-	void onCPU_Pressed(ActionEvent event) { }
-
-	@FXML
-	void onMotherboard_Pressed(ActionEvent event) { }
-
-	@FXML
-	void onHeatSkin_Pressed(ActionEvent event) { }
-
-	@FXML
-	void onRAM_Pressed(ActionEvent event) { }
+	public void initialize(URL location, ResourceBundle resources) {
+		
+//		ticket.addListener((o, ov, nv) -> OnTicketChanged(o, ov, nv));
+//		
+//		tableviewTicket.itemsProperty().bindBidirectional(ticket.listComponentsProperty().get());
+		
+		tableviewComponents.itemsProperty().bind(component_List);
+		
+		nameColumn_Comp.setCellValueFactory(new PropertyValueFactory<Component, String>("name"));
+		priceColumn_Comp.setCellValueFactory(new PropertyValueFactory<Component, Number>("price"));
+	 }
 
 	@FXML
-	void onGraphicCard_Pressed(ActionEvent event) { }
+	void onCPU_Pressed(ActionEvent event) throws IOException {
+		component_List.clear();
+		list_component.clear();
+		DBUtils.fillCPUTable(list_component);
+		component_List.addAll(list_component);
+	}
 
 	@FXML
-	void onMemory_Pressed(ActionEvent event) { }
+	void onMotherboard_Pressed(ActionEvent event) throws IOException {
+		component_List.clear();
+		list_component.clear();
+		DBUtils.fillMotherboardTable(list_component);
+		component_List.addAll(list_component);
+	}
 
 	@FXML
-	void onPowerSupply_Pressed(ActionEvent event) { }
+	void onHeatSkin_Pressed(ActionEvent event) throws IOException {
+		component_List.clear();
+		list_component.clear();
+		DBUtils.fillHeatSinksTable(list_component);
+		component_List.addAll(list_component);
+	}
 
 	@FXML
-	void onCase_Pressed(ActionEvent event) { }
+	void onRAM_Pressed(ActionEvent event) throws IOException {
+		
+		component_List.clear();
+		list_component.clear();
+		DBUtils.fillRAMTable(list_component);
+		component_List.addAll(list_component);
+	}
 
 	@FXML
-	void onDevices_Pressed(ActionEvent event) { }
+	void onGraphicCard_Pressed(ActionEvent event) throws IOException {
+		component_List.clear();
+		list_component.clear();
+		DBUtils.fillGraphicsTable(list_component);
+		component_List.addAll(list_component);
+	}
+
+	@FXML
+	void onMemory_Pressed(ActionEvent event) throws IOException {
+		component_List.clear();
+		list_component.clear();
+		DBUtils.fillHardDiskTable(list_component);
+		component_List.addAll(list_component);
+	}
+
+	@FXML
+	void onPowerSupply_Pressed(ActionEvent event) throws IOException {
+		component_List.clear();
+		list_component.clear();
+		DBUtils.fillPowerSupplyTable(list_component);
+		component_List.addAll(list_component);
+	}
+
+	@FXML
+	void onCase_Pressed(ActionEvent event) throws IOException {
+		component_List.clear();
+		list_component.clear();
+		DBUtils.fillCaseTable(list_component);
+		component_List.addAll(list_component);
+	}
+
+	@FXML
+	void onDevices_Pressed(ActionEvent event) throws IOException {
+		component_List.clear();
+		list_component.clear();
+		DBUtils.fillOthersTable(list_component);
+		component_List.addAll(list_component);
+	}
 
 	@FXML
 	void addProduct(ActionEvent event) { }
@@ -82,15 +147,6 @@ public class MainController implements Initializable {
 
 	@FXML
 	void removeProduct(ActionEvent event) { }
-
-	@FXML
-	void changePrice(ActionEvent event) { }
-
-	@FXML
-	void applyDiscounts(ActionEvent event) { }
-
-	@FXML
-	void applyTaxes(ActionEvent event) { }
 
 	@FXML
 	void onPayAction(ActionEvent event) { }
