@@ -26,13 +26,14 @@ public class MainController implements Initializable {
 	
 	private ListProperty<Component> component_List = new SimpleListProperty<Component>(FXCollections.observableArrayList());
 	private List<Component> list_component = new ArrayList<Component>();
+	private int comp;
 	
 	// VIEW
 	@FXML
 	private BorderPane view;
 	@FXML
 	private Button cpuBTN, motherboardBTN, heatsinkBTN, memoryramBTN, graphiccardBTN, harddiskBTN, powersupplyBTN,
-			caseBTN, devicesBTN, addBTN, removeBTN, finishBTN;
+			caseBTN, devicesBTN, addBTN, removeBTN, infoBTN, finishBTN;
 	@FXML
 	private TableView<Component> tableviewComponents, tableviewTicket;
 	@FXML
@@ -63,6 +64,7 @@ public class MainController implements Initializable {
 
 	@FXML
 	void onCPU_Pressed(ActionEvent event) throws IOException {
+		comp = 1;
 		component_List.clear();
 		list_component.clear();
 		DBUtils.fillCPUTable(list_component);
@@ -71,6 +73,7 @@ public class MainController implements Initializable {
 
 	@FXML
 	void onMotherboard_Pressed(ActionEvent event) throws IOException {
+		comp = 2;
 		component_List.clear();
 		list_component.clear();
 		DBUtils.fillMotherboardTable(list_component);
@@ -79,6 +82,7 @@ public class MainController implements Initializable {
 
 	@FXML
 	void onHeatSkin_Pressed(ActionEvent event) throws IOException {
+		comp = 3;
 		component_List.clear();
 		list_component.clear();
 		DBUtils.fillHeatSinksTable(list_component);
@@ -87,6 +91,7 @@ public class MainController implements Initializable {
 
 	@FXML
 	void onRAM_Pressed(ActionEvent event) throws IOException {
+		comp = 4;
 		component_List.clear();
 		list_component.clear();
 		DBUtils.fillRAMTable(list_component);
@@ -95,6 +100,7 @@ public class MainController implements Initializable {
 
 	@FXML
 	void onGraphicCard_Pressed(ActionEvent event) throws IOException {
+		comp = 5;
 		component_List.clear();
 		list_component.clear();
 		DBUtils.fillGraphicsTable(list_component);
@@ -103,6 +109,7 @@ public class MainController implements Initializable {
 
 	@FXML
 	void onMemory_Pressed(ActionEvent event) throws IOException {
+		comp = 6;
 		component_List.clear();
 		list_component.clear();
 		DBUtils.fillHardDiskTable(list_component);
@@ -111,6 +118,7 @@ public class MainController implements Initializable {
 
 	@FXML
 	void onPowerSupply_Pressed(ActionEvent event) throws IOException {
+		comp = 7;
 		component_List.clear();
 		list_component.clear();
 		DBUtils.fillPowerSupplyTable(list_component);
@@ -119,6 +127,7 @@ public class MainController implements Initializable {
 
 	@FXML
 	void onCase_Pressed(ActionEvent event) throws IOException {
+		comp = 8;
 		component_List.clear();
 		list_component.clear();
 		DBUtils.fillCaseTable(list_component);
@@ -127,6 +136,7 @@ public class MainController implements Initializable {
 
 	@FXML
 	void onDevices_Pressed(ActionEvent event) throws IOException {
+		comp = 9;
 		component_List.clear();
 		list_component.clear();
 		DBUtils.fillOthersTable(list_component);
@@ -147,6 +157,12 @@ public class MainController implements Initializable {
 		
 		tableviewTicket.getItems().remove(lastComponent);
 	}
+	
+	@FXML
+    void onInfoProduct(ActionEvent event) {
+		String nameComponent = tableviewComponents.getSelectionModel().getSelectedItem().getName();
+		DBUtils.showInfo(nameComponent, comp);
+    }
 
 	@FXML
 	void onFinishAction(ActionEvent event) { }
