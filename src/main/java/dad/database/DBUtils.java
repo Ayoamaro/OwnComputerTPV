@@ -50,7 +50,8 @@ public class DBUtils {
 		ResultSet rs = null;
 		
 		try {
-			String sql = "SELECT nameMother, priceMother FROM motherboard inner join CPU on motherboard.socket=CPU.socket";
+			String sql = "SELECT nameMother, priceMother FROM motherboard inner join socket on socket.idSocket = motherboard.socket "
+					+ "inner join CPU on socket.idSocket = CPU.socket";
 			ps = ((java.sql.Connection) con).prepareStatement(sql);
 			rs = ps.executeQuery();
 			while(rs.next()) {
@@ -104,7 +105,8 @@ public class DBUtils {
 		ResultSet rs = null;
 
 		try {
-			String sql = "SELECT nameRam, priceRam FROM ram";
+			String sql = "SELECT nameRam, priceRam FROM ram inner join ramType on ramType.idType = ram.type "
+					+ "inner join motherboard on motherboard.ramType = ramType.idType";
 			ps = ((java.sql.Connection) con).prepareStatement(sql);
 			rs = ps.executeQuery();
 			while(rs.next()) {
@@ -158,7 +160,9 @@ public class DBUtils {
 		ResultSet rs = null;
 
 		try {
-			String sql = "SELECT nameDisk, priceDisk FROM disk";
+			/*No funciona 22/02/2020*/
+			String sql = "SELECT nameDisk, priceDisk FROM disk inner join diskConnector on diskConnector.idConnector = disk.diskConnector"
+					+ "inner join motherboard on motherboard.diskConnector = diskConnector.idConnector";
 			ps = ((java.sql.Connection) con).prepareStatement(sql);
 			rs = ps.executeQuery();
 			while(rs.next()) {
