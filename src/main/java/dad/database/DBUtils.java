@@ -50,7 +50,7 @@ public class DBUtils {
 		ResultSet rs = null;
 		
 		try {
-			String sql = "SELECT nameMother, priceMother FROM motherboard";
+			String sql = "SELECT nameMother, priceMother FROM motherboard inner join CPU on motherboard.socket=CPU.socket";
 			ps = ((java.sql.Connection) con).prepareStatement(sql);
 			rs = ps.executeQuery();
 			while(rs.next()) {
