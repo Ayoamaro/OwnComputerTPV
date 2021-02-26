@@ -22,7 +22,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="view" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="700.0" minWidth="1050.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="view" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="700.0" minWidth="1050.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <top>
       <VBox BorderPane.alignment="CENTER">
          <children>
@@ -112,19 +112,7 @@
             <RowConstraints maxHeight="1.7976931348623157E308" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="cpuBTN" alignment="CENTER" contentDisplay="BOTTOM" graphicTextGap="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onCPU_Pressed" text="CPU" textAlignment="CENTER">
-               <graphic>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/cpu.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <font>
-                  <Font name="System Bold" size="10.0" />
-               </font>
-            </Button>
-            <Button fx:id="motherboardBTN" alignment="CENTER" contentDisplay="BOTTOM" graphicTextGap="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onMotherboard_Pressed" text="Motherboard" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+            <Button fx:id="motherboardBTN" alignment="CENTER" contentDisplay="BOTTOM" graphicTextGap="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onMotherboard_Pressed" text="Motherboard" textAlignment="CENTER" GridPane.halignment="CENTER">
                <graphic>
                   <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -136,7 +124,19 @@
                   <Font name="System Bold" size="10.0" />
                </font>
             </Button>
-            <Button fx:id="heatsinkBTN" alignment="CENTER" contentDisplay="BOTTOM" graphicTextGap="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onHeatSkin_Pressed" text="Heat-Sinks" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER">
+            <Button fx:id="cpuBTN" alignment="CENTER" contentDisplay="BOTTOM" disable="true" graphicTextGap="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onCPU_Pressed" text="CPU" textAlignment="CENTER" GridPane.columnIndex="1">
+               <graphic>
+                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/cpu.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+            </Button>
+            <Button fx:id="heatsinkBTN" alignment="CENTER" contentDisplay="BOTTOM" disable="true" graphicTextGap="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onHeatSkin_Pressed" text="Heat-Sinks" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                <graphic>
                   <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -148,7 +148,7 @@
                   <Font name="System Bold" size="10.0" />
                </font>
             </Button>
-            <Button fx:id="memoryramBTN" alignment="CENTER" contentDisplay="BOTTOM" graphicTextGap="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onRAM_Pressed" text="RAM" textAlignment="CENTER" GridPane.rowIndex="1">
+            <Button fx:id="memoryramBTN" alignment="CENTER" contentDisplay="BOTTOM" disable="true" graphicTextGap="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onRAM_Pressed" text="RAM" textAlignment="CENTER" GridPane.rowIndex="1">
                <graphic>
                   <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -160,7 +160,7 @@
                   <Font name="System Bold" size="10.0" />
                </font>
             </Button>
-            <Button fx:id="graphiccardBTN" alignment="CENTER" contentDisplay="BOTTOM" graphicTextGap="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onGraphicCard_Pressed" text="Graphic Card" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <Button fx:id="graphiccardBTN" alignment="CENTER" contentDisplay="BOTTOM" disable="true" graphicTextGap="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onGraphicCard_Pressed" text="Graphic Card" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                <graphic>
                   <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -172,7 +172,7 @@
                   <Font name="System Bold" size="10.0" />
                </font>
             </Button>
-            <Button fx:id="harddiskBTN" alignment="CENTER" contentDisplay="BOTTOM" graphicTextGap="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onMemory_Pressed" text="Hard-Disk" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <Button fx:id="harddiskBTN" alignment="CENTER" contentDisplay="BOTTOM" disable="true" graphicTextGap="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onMemory_Pressed" text="Hard-Disk" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER">
                <graphic>
                   <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -184,7 +184,7 @@
                   <Font name="System Bold" size="10.0" />
                </font>
             </Button>
-            <Button fx:id="powersupplyBTN" alignment="CENTER" contentDisplay="BOTTOM" graphicTextGap="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onPowerSupply_Pressed" text="Power Supply" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+            <Button fx:id="powersupplyBTN" alignment="CENTER" contentDisplay="BOTTOM" disable="true" graphicTextGap="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onPowerSupply_Pressed" text="Power Supply" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                <graphic>
                   <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -196,7 +196,7 @@
                   <Font name="System Bold" size="10.0" />
                </font>
             </Button>
-            <Button fx:id="caseBTN" alignment="CENTER" contentDisplay="BOTTOM" graphicTextGap="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onCase_Pressed" text="Case" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+            <Button fx:id="caseBTN" alignment="CENTER" contentDisplay="BOTTOM" disable="true" graphicTextGap="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onCase_Pressed" text="Case" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                <graphic>
                   <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -208,7 +208,7 @@
                   <Font name="System Bold" size="10.0" />
                </font>
             </Button>
-            <Button fx:id="devicesBTN" alignment="CENTER" contentDisplay="BOTTOM" graphicTextGap="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onDevices_Pressed" text="Other Devices" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+            <Button fx:id="devicesBTN" alignment="CENTER" contentDisplay="BOTTOM" disable="true" graphicTextGap="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onDevices_Pressed" text="Other Devices" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                <graphic>
                   <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -267,10 +267,14 @@
                         <Font name="System Bold" size="25.0" />
                      </font>
                   </Label>
+<<<<<<< HEAD
                   <TextField fx:id="finalpriceTXT" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="125.0" HBox.hgrow="NEVER">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font></TextField>
+=======
+                  <TextField fx:id="finalpriceTXT" alignment="CENTER" disable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
+>>>>>>> 803fd5875688a06a9ee4c7cc83eabf4d7fb88ebc
                   <Label text="€">
                      <padding>
                         <Insets left="5.0" />
