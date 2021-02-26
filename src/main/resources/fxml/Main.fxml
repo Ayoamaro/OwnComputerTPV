@@ -30,7 +30,7 @@
               <menus>
                 <Menu mnemonicParsing="false" text="File">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="New">
+                    <MenuItem fx:id="NewButton" mnemonicParsing="false" onAction="#onNewAction" text="New">
                            <graphic>
                               <ImageView pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -42,7 +42,7 @@
                               <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                            </accelerator>
                         </MenuItem>
-                        <MenuItem mnemonicParsing="false" text="Open...">
+                        <MenuItem fx:id="OpenButton" mnemonicParsing="false" onAction="#onOpenAction" text="Open...">
                            <accelerator>
                               <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                            </accelerator>
@@ -54,7 +54,7 @@
                               </ImageView>
                            </graphic>
                         </MenuItem>
-                        <MenuItem mnemonicParsing="false" text="Save">
+                        <MenuItem fx:id="SaveButton" mnemonicParsing="false" onAction="#onSaveAction" text="Save">
                            <accelerator>
                               <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                            </accelerator>
@@ -66,9 +66,9 @@
                               </ImageView>
                            </graphic>
                         </MenuItem>
-                        <MenuItem mnemonicParsing="false" text="Save all..." />
+                        <MenuItem fx:id="SaveAllButton" mnemonicParsing="false" onAction="#onSaveAllAction" text="Save all..." />
                         <SeparatorMenuItem mnemonicParsing="false" />
-                        <MenuItem mnemonicParsing="false" text="Exit">
+                        <MenuItem fx:id="ExitButton" mnemonicParsing="false" onAction="#onExitAction" text="Exit">
                            <accelerator>
                               <KeyCodeCombination alt="UP" code="E" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                            </accelerator>

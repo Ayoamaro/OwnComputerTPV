@@ -14,19 +14,24 @@ import dad.javafx.owncomputer.model.Disk;
 import dad.javafx.owncomputer.model.RAM;
 import dad.javafx.owncomputer.model.Socket;
 import dad.javafx.owncomputer.util.DialogInfo;
+import javafx.application.Platform;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
@@ -52,6 +57,22 @@ public class MainController implements Initializable {
 	// VIEW
 	@FXML
 	private BorderPane view;
+	
+    @FXML
+    private MenuItem NewButton;
+
+    @FXML
+    private MenuItem OpenButton;
+
+    @FXML
+    private MenuItem SaveButton;
+
+    @FXML
+    private MenuItem SaveAllButton;
+
+    @FXML
+    private MenuItem ExitButton;
+    
 	@FXML
 	private Button settingsBTN, cpuBTN, motherboardBTN, heatsinkBTN, memoryramBTN, graphiccardBTN, harddiskBTN, powersupplyBTN,
 			caseBTN, devicesBTN, addBTN, removeBTN, infoBTN, finishBTN;
@@ -92,6 +113,28 @@ public class MainController implements Initializable {
 			e.printStackTrace();
 		}
 	 }
+	
+    @FXML
+    void onExitAction(ActionEvent event) { 
+    	Alert alert = new Alert(AlertType.CONFIRMATION);
+		alert.setTitle("Exit");
+		alert.setHeaderText("Are you sure?");
+
+		Optional<ButtonType> result = alert.showAndWait();
+		if (result.get() == ButtonType.OK) {
+			System.exit(0);
+		}
+    }
+    @FXML
+    void onNewAction(ActionEvent event) { 
+		
+    }
+    @FXML
+    void onOpenAction(ActionEvent event) { }
+    @FXML
+    void onSaveAction(ActionEvent event) { }
+    @FXML
+    void onSaveAllAction(ActionEvent event) { }
 
 	@FXML
 	void onSettingsAction(ActionEvent event) throws IOException {
