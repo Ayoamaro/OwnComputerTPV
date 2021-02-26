@@ -24,6 +24,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
@@ -119,7 +120,7 @@ public class MainController implements Initializable {
     	Alert alert = new Alert(AlertType.CONFIRMATION);
 		alert.setTitle("Exit");
 		alert.setHeaderText("Are you sure?");
-
+		
 		Optional<ButtonType> result = alert.showAndWait();
 		if (result.get() == ButtonType.OK) {
 			System.exit(0);
@@ -149,9 +150,10 @@ public class MainController implements Initializable {
 		
 		// CREATE SCENE TAB WITH GRIDPANE
 		GridPane scene = new GridPane();
-		scene.setHgap(10);
-		scene.setVgap(10);
-		scene.setPadding(new Insets(15, 150, 15, 15));
+		scene.setHgap(20);
+		scene.setVgap(20);
+		scene.setPadding(new Insets(20, 200, 20, 20));
+		scene.getStylesheets().add(MainController.class.getResource("/css/darkTheme.css").toExternalForm());
 
 		ComboBox socketAvailable = new ComboBox();
 		socketAvailable.getItems().addAll(socket_list.getValue());

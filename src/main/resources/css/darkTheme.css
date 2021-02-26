@@ -96,11 +96,6 @@
     -fx-font-family: "Courier New";
 }
 
-/* 
- * Metro style Push Button
- * Author: Pedro Duque Vieira
- * http://pixelduke.wordpress.com/2012/10/23/jmetro-windows-8-controls-on-java/
- */
 .button {
     -fx-padding: 5 22 5 22;   
     -fx-border-color: #e2e2e2;
@@ -113,6 +108,45 @@
     -fx-background-insets: 0 0 0 0, 0, 1, 2;
 }
 
+.combo-box {
+    -fx-padding: 5 22 5 22;   
+    -fx-border-color: #e2e2e2;
+    -fx-border-width: 2;
+    -fx-background-radius: 0;
+    -fx-background-color: #C0C0C0;
+    -fx-font-family: "Courier New", Helvetica, Arial, sans-serif;
+    -fx-font-size: 11pt;
+    -fx-text-fill: white;
+    -fx-background-insets: 0 0 0 0, 0, 1, 2;
+}
+
+.combo-box:pressed, .combo-box:default:hover:pressed {
+  -fx-background-color: white;
+  -fx-text-fill: #1d1d1d;
+  
+  }
+  
+  .combo-box:hover {
+    -fx-background-color: #EC7063;
+}
+
+.combo-box:focused {
+    -fx-border-color: white, white;
+    -fx-border-width: 1, 1;
+    -fx-border-style: solid, segments(1, 1);
+    -fx-border-radius: 0, 0;
+    -fx-border-insets: 1 1 1 1, 0;
+}
+
+.combo-box:default {
+    -fx-background-color: -fx-focus-color;
+    -fx-text-fill: #ffffff;
+}
+
+.combo-box:default:hover {
+    -fx-background-color: derive(-fx-focus-color,30%);
+}
+  
 .button:hover {
     -fx-background-color: #EC7063;
 }
