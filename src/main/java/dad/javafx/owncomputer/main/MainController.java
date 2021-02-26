@@ -27,6 +27,7 @@ public class MainController implements Initializable {
 	private ListProperty<Component> component_List = new SimpleListProperty<Component>(FXCollections.observableArrayList());
 	private List<Component> list_component = new ArrayList<Component>();
 	private int comp;
+	private double total = 0d;
 	
 	// VIEW
 	@FXML
@@ -49,7 +50,7 @@ public class MainController implements Initializable {
 		loader.setController(this);
 		loader.load();
 	}
-
+	
 	// INITIALIZE
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -61,6 +62,7 @@ public class MainController implements Initializable {
 		nameColumn_Comp.setCellValueFactory(new PropertyValueFactory<Component, String>("name"));
 		priceColumn_Comp.setCellValueFactory(new PropertyValueFactory<Component, Number>("price"));
 	 }
+
 
 	@FXML
 	void onCPU_Pressed(ActionEvent event) throws IOException {
@@ -149,6 +151,8 @@ public class MainController implements Initializable {
 		Component addComponent = new Component(selected.getName().toString(), selected.getPrice());
 		
 		tableviewTicket.getItems().add(addComponent);
+		total = total + selected.getPrice();
+		finalpriceTXT.setText(String.format("%.2f", total));
 	}
 	
 	@FXML
@@ -156,6 +160,8 @@ public class MainController implements Initializable {
 		Component lastComponent = tableviewTicket.getSelectionModel().getSelectedItem();
 		
 		tableviewTicket.getItems().remove(lastComponent);
+		total = total - lastComponent.getPrice();
+		finalpriceTXT.setText(String.format("%.2f", total));
 	}
 	
 	@FXML
