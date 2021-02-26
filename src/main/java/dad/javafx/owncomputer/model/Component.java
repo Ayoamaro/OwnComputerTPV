@@ -1,4 +1,4 @@
-package dad.javafx.owncomputer.util;
+package dad.javafx.owncomputer.model;
 
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
