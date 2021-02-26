@@ -1,7 +1,6 @@
 package dad.database;
 
 import java.io.IOException;
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -50,14 +49,14 @@ public class DBUtils {
 		ResultSet rs = null;
 		
 		try {
-			String sql = "SELECT nameMother, priceMother FROM motherboard inner join socket on socket.idSocket = motherboard.socket "
-					+ "inner join CPU on socket.idSocket = CPU.socket";
+			String sql = "SELECT DISTINCT nameMother, priceMother FROM motherboard INNER JOIN socket on socket.idSocket = motherboard.socket "
+					+ "INNER JOIN CPU on socket.idSocket = CPU.socket";
 			ps = ((java.sql.Connection) con).prepareStatement(sql);
 			rs = ps.executeQuery();
 			while(rs.next()) {
 				list.add(new Component(rs.getString("nameMother"), rs.getDouble("priceMother")));
 			}
-		}catch(SQLException e) {
+		} catch(SQLException e) {
 			System.out.println(e.toString());
 		} finally {
 			try {
@@ -105,8 +104,8 @@ public class DBUtils {
 		ResultSet rs = null;
 
 		try {
-			String sql = "SELECT nameRam, priceRam FROM ram inner join ramType on ramType.idType = ram.type "
-					+ "inner join motherboard on motherboard.ramType = ramType.idType";
+			String sql = "SELECT DISTINCT nameRam, priceRam FROM ram INNER JOIN ramType on ramType.idType = ram.type "
+					+ "INNER JOIN motherboard on motherboard.ramType = ramType.idType";
 			ps = ((java.sql.Connection) con).prepareStatement(sql);
 			rs = ps.executeQuery();
 			while(rs.next()) {
@@ -160,9 +159,8 @@ public class DBUtils {
 		ResultSet rs = null;
 
 		try {
-			/*No funciona 22/02/2020*/
-			String sql = "SELECT nameDisk, priceDisk FROM disk inner join diskConnector on diskConnector.idConnector = disk.diskConnector"
-					+ "inner join motherboard on motherboard.diskConnector = diskConnector.idConnector";
+			String sql = "SELECT DISTINCT nameDisk, priceDisk FROM hardDisk INNER JOIN diskConnector on diskConnector.idConnector = hardDisk.diskConnector "
+					+ "INNER JOIN motherboard on motherboard.diskConnector = diskConnector.idConnector";
 			ps = ((java.sql.Connection) con).prepareStatement(sql);
 			rs = ps.executeQuery();
 			while(rs.next()) {
