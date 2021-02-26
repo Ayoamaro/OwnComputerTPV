@@ -22,7 +22,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+<<<<<<< HEAD
 <BorderPane fx:id="view" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="700.0" minWidth="1050.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+=======
+<BorderPane fx:id="view" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="700.0" minWidth="1050.0" stylesheets="@../css/darkTheme.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+>>>>>>> d339473553e9bfe36ea404fdff5ec5d4bbe78a91
    <top>
       <VBox BorderPane.alignment="CENTER">
          <children>
