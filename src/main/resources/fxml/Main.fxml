@@ -267,14 +267,11 @@
                         <Font name="System Bold" size="25.0" />
                      </font>
                   </Label>
-<<<<<<< HEAD
                   <TextField fx:id="finalpriceTXT" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="125.0" HBox.hgrow="NEVER">
                      <font>
                         <Font name="System Bold" size="18.0" />
-                     </font></TextField>
-=======
-                  <TextField fx:id="finalpriceTXT" alignment="CENTER" disable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
->>>>>>> 803fd5875688a06a9ee4c7cc83eabf4d7fb88ebc
+                     </font>
+                  </TextField>
                   <Label text="€">
                      <padding>
                         <Insets left="5.0" />
