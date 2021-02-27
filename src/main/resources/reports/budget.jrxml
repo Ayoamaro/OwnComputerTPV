@@ -107,7 +107,7 @@
 		</band>
 	</columnFooter>
 	<pageFooter>
-		<band height="50">
+		<band height="56">
 			<textField>
 				<reportElement x="390" y="30" width="100" height="20" uuid="1287a0f4-89d7-461a-ada6-a70a06756012"/>
 				<textElement textAlignment="Right"/>

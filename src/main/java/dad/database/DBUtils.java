@@ -320,7 +320,7 @@ public class DBUtils {
         
         
         root.getChildren().addAll(infoComponent);
-        Scene scene = new Scene(root, 350, 350);
+        Scene scene = new Scene(root, 500, 350);
         infoComponent.getStyleClass().add("info");
 		scene.getStylesheets().add(MainController.class.getResource("/css/darkTheme.css").toExternalForm());
         Stage stage = new Stage();

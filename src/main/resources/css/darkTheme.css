@@ -27,7 +27,7 @@
 .info {
     -fx-font-size: 15pt;
     -fx-font-family: "Courier New";
-    -fx-text-fill: white;
+    -fx-text-fill: black;
     -fx-font-weight: bold;
 }
 
