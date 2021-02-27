@@ -257,7 +257,6 @@ public class MainController implements Initializable {
 
 	@FXML
 	void onCase_Pressed(ActionEvent event) throws IOException {
-		comp = 8;
 		component_List.clear();
 		list_component.clear();
 		DBUtils.fillCaseTable(list_component);
@@ -266,10 +265,10 @@ public class MainController implements Initializable {
 
 	@FXML
 	void onDevices_Pressed(ActionEvent event) throws IOException {
-		comp = 9;
+		comp = 8;
 		component_List.clear();
 		list_component.clear();
-		DBUtils.fillOthersTable(list_component);
+		DBUtils.fillScreensTable(list_component);
 		component_List.addAll(list_component);
 	}
 
@@ -293,7 +292,7 @@ public class MainController implements Initializable {
 	}
 	
 	@FXML
-    void onInfoProduct(ActionEvent event) {
+    void onInfoProduct(ActionEvent event) throws IOException {
 		String nameComponent = tableviewComponents.getSelectionModel().getSelectedItem().getName();
 		DBUtils.showInfo(nameComponent, comp);
     }

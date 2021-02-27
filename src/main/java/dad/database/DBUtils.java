@@ -7,6 +7,11 @@ import java.sql.SQLException;
 import java.util.List;
 
 import dad.javafx.owncomputer.model.Component;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
+import javafx.stage.Stage;
 
 public class DBUtils {
 	
@@ -244,7 +249,7 @@ public class DBUtils {
 		}
 	}
 	
-	public static void fillOthersTable(List<Component> list) throws IOException {
+	public static void fillScreensTable(List<Component> list) throws IOException {
 		
 		java.sql.Connection con =  DBConnection.connect();
 		PreparedStatement ps = null;
@@ -271,34 +276,290 @@ public class DBUtils {
 		
 	}
 
-	public static void showInfo(String name, int table) {
+	public static void showInfo(String name, int table) throws IOException {
 		// TODO Auto-generated method stub
 		
 		
 		switch (table) {
 		
 		case 1:
-			
+			showInfoWindow(infoCPU(name));
 		case 2:
-		
+			showInfoWindow(infoMotherboard(name));
 		case 3:
-			
+			showInfoWindow(infoHardDisk(name));
 		case 4:
-			
+			showInfoWindow(infoRam(name));
 		case 5:
-			
+			showInfoWindow(infoGraphics(name));
 		case 6:
-			
+			showInfoWindow(infoHeatSink(name));
 		case 7:
-			
+			showInfoWindow(infoPowerSupply(name));
 		case 8:
-			
-		case 9:
+			showInfoWindow(infoScreen(name));
 		}
 	}
 	
-	public void showInfoWindow(String info) {
+	public static void showInfoWindow(String info) throws IOException {
+	
+        HBox root = new HBox();
+        Label infoComponent =  new Label();
+        infoComponent.setText(info);
+        root.setAlignment(Pos.CENTER);
+        
+        root.getChildren().addAll(infoComponent);
+        Scene scene = new Scene(root, 200, 200);
+        Stage stage = new Stage();
+        stage.setTitle("Info Component");
+        stage.setScene(scene);
+        stage.show();
+	}
+	
+	private static String infoCPU(String name) {
+		String info = "";
+		java.sql.Connection con =  DBConnection.connect();
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+
+		try {
+			String sql = "SELECT core, frecuency, nameSo, priceCPU FROM CPU "
+					+ "inner join socket on CPU.socket = socket.idsocket "
+					+ "where nameCPU = '" + name + "'";
+			ps = ((java.sql.Connection) con).prepareStatement(sql);
+			rs = ps.executeQuery();
+			info = "Name of CPU: " + name + "\n"
+					+ "Number of cores: " + rs.getInt("core") + "\n"
+					+ "Frecuency: " + rs.getString("frecuency") + "\n"
+					+ "Type of Socket: " + rs.getString("nameSo") + "\n"
+					+ "Price: " + rs.getInt("priceCPU");
+		}catch(SQLException e) {
+			System.out.println(e.toString());
+		} finally {
+			try {
+			rs.close();
+			ps.close();
+			con.close();
+			}catch (SQLException e) {
+				System.out.println(e.toString());
+			}
+		}
 		
+		return info;
+	}
+	
+	private static String infoMotherboard(String name) {
+		String info = "";
+		java.sql.Connection con =  DBConnection.connect();
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+
+		try {
+			String sql = "SELECT nameType, nameSo, nameConnector, priceMother FROM motherboard "
+					+ "inner join ramType on motherboard.ramType=ramType.idType "
+					+ "inner join socket on motherboard.socket = socket.idSocket "
+					+ "inner join diskConnector on motherboard.diskConnector=diskConnector "
+					+ "where nameMother = '" + name + "'";
+			ps = ((java.sql.Connection) con).prepareStatement(sql);
+			rs = ps.executeQuery();
+			info = "Name of Motherboard: " + name + "\n"
+					+ "Type of RAM: " + rs.getString("nameType") + "\n"
+					+ "Disk connector: " + rs.getString("nameConnector") + "\n"
+					+ "Type of Socket: " + rs.getString("nameSo") + "\n"
+					+ "Price: " + rs.getInt("priceMother");
+		}catch(SQLException e) {
+			System.out.println(e.toString());
+		} finally {
+			try {
+			rs.close();
+			ps.close();
+			con.close();
+			}catch (SQLException e) {
+				System.out.println(e.toString());
+			}
+		}
 		
+		return info;
+	}
+	
+	private static String infoRam(String name) {
+		String info = "";
+		java.sql.Connection con =  DBConnection.connect();
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+
+		try {
+			String sql = "SELECT nameType, capacity, priceRam FROM ram "
+					+ "inner join ramType on ram.type=ramType.idType "
+					+ "where nameRam = '" + name + "'";
+			ps = ((java.sql.Connection) con).prepareStatement(sql);
+			rs = ps.executeQuery();
+			info = "Name of Ram: " + name + "\n"
+					+ "Type of connector: " + rs.getString("nameType") + "\n"
+					+ "Capacity: " + rs.getString("capacity") + "\n"
+					+ "Price: " + rs.getInt("priceRam");
+		}catch(SQLException e) {
+			System.out.println(e.toString());
+		} finally {
+			try {
+			rs.close();
+			ps.close();
+			con.close();
+			}catch (SQLException e) {
+				System.out.println(e.toString());
+			}
+		}
+		
+		return info;
+	}
+	
+	private static String infoGraphics(String name) {
+		String info = "";
+		java.sql.Connection con =  DBConnection.connect();
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+
+		try {
+			String sql = "SELECT memory, priceGraphic FROM graphicCard "
+					+ "where nameGraphic = '" + name + "'";
+			ps = ((java.sql.Connection) con).prepareStatement(sql);
+			rs = ps.executeQuery();
+			info = "Name of Graphic Card: " + name + "\n"
+					+ "Memory: " + rs.getString("memory") + "\n"
+					+ "Price: " + rs.getInt("priceGraphic");
+		}catch(SQLException e) {
+			System.out.println(e.toString());
+		} finally {
+			try {
+			rs.close();
+			ps.close();
+			con.close();
+			}catch (SQLException e) {
+				System.out.println(e.toString());
+			}
+		}
+		
+		return info;
+	}
+	
+	private static String infoHardDisk(String name) {
+		String info = "";
+		java.sql.Connection con =  DBConnection.connect();
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+
+		try {
+			String sql = "SELECT nameConnector, type, capacity, priceDisk FROM graphicCard "
+					+ "inner join diskConnector on hardDisk.diskConnector=diskConnector.idConnector "
+					+ "where nameDisk = '" + name + "'";
+			ps = ((java.sql.Connection) con).prepareStatement(sql);
+			rs = ps.executeQuery();
+			info = "Name of Hard Disk: " + name + "\n"
+					+ "Connector: " + rs.getString("nameConnector") + "\n"
+					+ "Type of Disk: " + rs.getString("type") + "\n"
+					+ "Capacity: " + rs.getString("capacity") + "\n"
+					+ "Price: " + rs.getInt("price");
+		}catch(SQLException e) {
+			System.out.println(e.toString());
+		} finally {
+			try {
+			rs.close();
+			ps.close();
+			con.close();
+			}catch (SQLException e) {
+				System.out.println(e.toString());
+			}
+		}
+		
+		return info;
+	}
+	
+	private static String infoHeatSink(String name) {
+		String info = "";
+		java.sql.Connection con =  DBConnection.connect();
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+
+		try {
+			String sql = "SELECT voltage, power, priceHeat FROM heatSinks "
+					+ "where nameHeat = '" + name + "'";
+			ps = ((java.sql.Connection) con).prepareStatement(sql);
+			rs = ps.executeQuery();
+			info = "Name of Heat Sink: " + name + "\n"
+					+ "Voltage: " + rs.getString("voltage") + "\n"
+					+ "Power: " + rs.getString("power") + "\n"
+					+ "Price: " + rs.getInt("priceHeat");
+		}catch(SQLException e) {
+			System.out.println(e.toString());
+		} finally {
+			try {
+			rs.close();
+			ps.close();
+			con.close();
+			}catch (SQLException e) {
+				System.out.println(e.toString());
+			}
+		}
+		
+		return info;
+	}
+	
+	private static String infoPowerSupply(String name) {
+		String info = "";
+		java.sql.Connection con =  DBConnection.connect();
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+
+		try {
+			String sql = "SELECT power, pricePower FROM powerSupply "
+					+ "where namePower = '" + name + "'";
+			ps = ((java.sql.Connection) con).prepareStatement(sql);
+			rs = ps.executeQuery();
+			info = "Name of Power Supply: " + name + "\n"
+					+ "Power: " + rs.getString("power") + "\n"
+					+ "Price: " + rs.getInt("pricePower");
+		}catch(SQLException e) {
+			System.out.println(e.toString());
+		} finally {
+			try {
+			rs.close();
+			ps.close();
+			con.close();
+			}catch (SQLException e) {
+				System.out.println(e.toString());
+			}
+		}
+		
+		return info;
+	}
+	
+	private static String infoScreen(String name) {
+		String info = "";
+		java.sql.Connection con =  DBConnection.connect();
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+
+		try {
+			String sql = "SELECT resolution, inch, priceScreen FROM screens "
+					+ "where nameScreen = '" + name + "'";
+			ps = ((java.sql.Connection) con).prepareStatement(sql);
+			rs = ps.executeQuery();
+			info = "Name of Screen: " + name + "\n"
+					+ "Resolution: " + rs.getString("resolution") + "\n"
+					+ "Inch: " + rs.getInt("inch") + "\n"
+					+ "Price: " + rs.getInt("priceScreen");
+		}catch(SQLException e) {
+			System.out.println(e.toString());
+		} finally {
+			try {
+			rs.close();
+			ps.close();
+			con.close();
+			}catch (SQLException e) {
+				System.out.println(e.toString());
+			}
+		}
+		
+		return info;
 	}
 }
