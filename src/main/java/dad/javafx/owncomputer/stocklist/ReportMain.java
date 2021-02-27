@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import dad.javafx.owncomputer.model.Component;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperExportManager;
@@ -20,15 +21,15 @@ public class ReportMain {
 	
 public static void generarPdf() throws JRException, IOException {
 		
-		List<ProductList> misproductos = new ArrayList<>();
+		List<Component> misproductos = new ArrayList<>();
 		
-		ProductList p1 = new ProductList();
+		Component p1 = new Component();
 //		p1.setId(1234L);
 //		p1.setNombre("Mi productito");
 //		p1.setCantidad(500);
 //		misproductos.add(p1);
 		
-		ProductList p2 = new ProductList();
+		Component p2 = new Component();
 //		p2.setId(4321L);
 //		p2.setNombre("Otro productito");
 //		p2.setCantidad(123);

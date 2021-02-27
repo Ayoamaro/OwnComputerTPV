@@ -62,7 +62,11 @@ public class MainController implements Initializable {
 	@FXML
 	private BorderPane view;
 	
-    @FXML
+    public ListProperty<Component> getComponent_List() {
+		return component_List;
+	}
+
+	@FXML
     private MenuItem NewButton;
 
     @FXML
@@ -337,4 +341,6 @@ public class MainController implements Initializable {
     public final void setTicket_list(final ObservableList<Component> ticket_list) {
         this.ticket_listProperty().set(ticket_list);
     }
+    
+    
 }

@@ -9,7 +9,7 @@ public class App extends Application {
 
 	private static Stage primaryStage;
 	
-	private MainController mainController;
+	private static MainController mainController;
 	
 	private static Scene mainScene;
 	
@@ -40,5 +40,11 @@ public class App extends Application {
 	public static void main(String[] args) {
 		launch(args);
 	}
+
+	public static MainController getMainController() {
+		return mainController;
+	}
+	
+	
 	
 }
