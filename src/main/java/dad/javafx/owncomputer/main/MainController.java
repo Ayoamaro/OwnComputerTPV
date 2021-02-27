@@ -200,6 +200,7 @@ public class MainController implements Initializable {
 	
 	@FXML
 	void onCPU_Pressed(ActionEvent event) throws IOException {
+		infoBTN.setDisable(false);
 		comp = 1;
 		component_List.clear();
 		list_component.clear();
@@ -209,6 +210,7 @@ public class MainController implements Initializable {
 
 	@FXML
 	void onMotherboard_Pressed(ActionEvent event) throws IOException {
+		infoBTN.setDisable(false);
 		comp = 2;
 		component_List.clear();
 		list_component.clear();
@@ -218,6 +220,7 @@ public class MainController implements Initializable {
 
 	@FXML
 	void onHeatSkin_Pressed(ActionEvent event) throws IOException {
+		infoBTN.setDisable(false);
 		comp = 3;
 		component_List.clear();
 		list_component.clear();
@@ -227,6 +230,7 @@ public class MainController implements Initializable {
 
 	@FXML
 	void onRAM_Pressed(ActionEvent event) throws IOException {
+		infoBTN.setDisable(false);
 		comp = 4;
 		component_List.clear();
 		list_component.clear();
@@ -236,6 +240,7 @@ public class MainController implements Initializable {
 
 	@FXML
 	void onGraphicCard_Pressed(ActionEvent event) throws IOException {
+		infoBTN.setDisable(false);
 		comp = 5;
 		component_List.clear();
 		list_component.clear();
@@ -245,6 +250,7 @@ public class MainController implements Initializable {
 
 	@FXML
 	void onMemory_Pressed(ActionEvent event) throws IOException {
+		infoBTN.setDisable(false);
 		comp = 6;
 		component_List.clear();
 		list_component.clear();
@@ -254,6 +260,7 @@ public class MainController implements Initializable {
 
 	@FXML
 	void onPowerSupply_Pressed(ActionEvent event) throws IOException {
+		infoBTN.setDisable(false);
 		comp = 7;
 		component_List.clear();
 		list_component.clear();
@@ -263,6 +270,7 @@ public class MainController implements Initializable {
 
 	@FXML
 	void onCase_Pressed(ActionEvent event) throws IOException {
+		infoBTN.setDisable(true);
 		component_List.clear();
 		list_component.clear();
 		DBUtils.fillCaseTable(list_component);
@@ -271,6 +279,7 @@ public class MainController implements Initializable {
 
 	@FXML
 	void onDevices_Pressed(ActionEvent event) throws IOException {
+		infoBTN.setDisable(false);
 		comp = 8;
 		component_List.clear();
 		list_component.clear();

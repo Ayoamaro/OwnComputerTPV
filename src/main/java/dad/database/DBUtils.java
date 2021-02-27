@@ -286,20 +286,28 @@ public class DBUtils {
 		
 		case 1:
 			showInfoWindow(infoCPU(name));
+			break;
 		case 2:
 			showInfoWindow(infoMotherboard(name));
+			break;
 		case 3:
-			showInfoWindow(infoHardDisk(name));
+			showInfoWindow(infoHeatSink(name));
+			break;
 		case 4:
 			showInfoWindow(infoRam(name));
+			break;
 		case 5:
 			showInfoWindow(infoGraphics(name));
+			break;
 		case 6:
-			showInfoWindow(infoHeatSink(name));
+			showInfoWindow(infoHardDisk(name));
+			break;
 		case 7:
 			showInfoWindow(infoPowerSupply(name));
+			break;
 		case 8:
 			showInfoWindow(infoScreen(name));
+			break;
 		}
 	}
 	
@@ -310,11 +318,12 @@ public class DBUtils {
         infoComponent.setText(info);
         root.setAlignment(Pos.CENTER);
         
+        
         root.getChildren().addAll(infoComponent);
         Scene scene = new Scene(root, 350, 350);
+        infoComponent.getStyleClass().add("info");
 		scene.getStylesheets().add(MainController.class.getResource("/css/darkTheme.css").toExternalForm());
         Stage stage = new Stage();
-      /*  stage.getIcons().add(new Image(this.getClass().getResource("/images/owncomputer-icon.png").toString()));*/
         stage.setTitle("Info Component");
         stage.setScene(scene);
         stage.show();
@@ -453,7 +462,7 @@ public class DBUtils {
 		ResultSet rs = null;
 
 		try {
-			String sql = "SELECT nameConnector, type, capacity, priceDisk FROM graphicCard "
+			String sql = "SELECT * FROM hardDisk "
 					+ "inner join diskConnector on hardDisk.diskConnector=diskConnector.idConnector "
 					+ "where nameDisk = '" + name + "'";
 			ps = ((java.sql.Connection) con).prepareStatement(sql);
@@ -462,7 +471,7 @@ public class DBUtils {
 					+ "Connector: " + rs.getString("nameConnector") + "\n"
 					+ "Type of Disk: " + rs.getString("type") + "\n"
 					+ "Capacity: " + rs.getString("capacity") + "\n"
-					+ "Price: " + rs.getInt("price");
+					+ "Price: " + rs.getInt("priceDisk");
 		}catch(SQLException e) {
 			System.out.println(e.toString());
 		} finally {
