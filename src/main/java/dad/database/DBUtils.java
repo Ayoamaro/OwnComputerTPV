@@ -6,10 +6,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
+import dad.javafx.owncomputer.main.MainController;
 import dad.javafx.owncomputer.model.Component;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
@@ -309,8 +311,10 @@ public class DBUtils {
         root.setAlignment(Pos.CENTER);
         
         root.getChildren().addAll(infoComponent);
-        Scene scene = new Scene(root, 200, 200);
+        Scene scene = new Scene(root, 350, 350);
+		scene.getStylesheets().add(MainController.class.getResource("/css/darkTheme.css").toExternalForm());
         Stage stage = new Stage();
+      /*  stage.getIcons().add(new Image(this.getClass().getResource("/images/owncomputer-icon.png").toString()));*/
         stage.setTitle("Info Component");
         stage.setScene(scene);
         stage.show();

@@ -17,6 +17,7 @@ import dad.javafx.owncomputer.util.DialogInfo;
 import javafx.application.Platform;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -51,6 +52,7 @@ public class MainController implements Initializable {
 	private ListProperty<Disk> disk_list = new SimpleListProperty<Disk>(FXCollections.observableArrayList());
 	private ListProperty<RAM> RAM_list = new SimpleListProperty<RAM>(FXCollections.observableArrayList());
 	private List<Component> list_component = new ArrayList<Component>();
+	private ListProperty<Component> ticket_list = new SimpleListProperty<Component>(FXCollections.observableArrayList());
 	private String socket_selected, disk_selected, RAM_selected;
 	private int comp;
 	private double total = 0d;
@@ -61,15 +63,6 @@ public class MainController implements Initializable {
 	
     @FXML
     private MenuItem NewButton;
-
-    @FXML
-    private MenuItem OpenButton;
-
-    @FXML
-    private MenuItem SaveButton;
-
-    @FXML
-    private MenuItem SaveAllButton;
 
     @FXML
     private MenuItem ExitButton;
@@ -85,6 +78,8 @@ public class MainController implements Initializable {
 	private TableColumn<Component, Number> priceColumn_Comp, priceColumn_Ticket;
 	@FXML
 	private TextField finalpriceTXT;
+	
+
 
 	// CONSTRUCTOR
 	public MainController() throws IOException {
@@ -97,6 +92,9 @@ public class MainController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		
+		tableviewTicket.itemsProperty().bind(ticket_list);
+	    ticket_list.addListener((o, oldValue, newValue) -> onTicketChanged(o, oldValue, newValue));
+	    removeBTN.setDisable(true);
 		tableviewComponents.itemsProperty().bind(component_List);
 		
 		nameColumn_Ticket.setCellValueFactory(new PropertyValueFactory<Component, String>("name"));
@@ -115,6 +113,17 @@ public class MainController implements Initializable {
 		}
 	 }
 	
+	private void onTicketChanged(ObservableValue<? extends ObservableList<Component>> o, ObservableList<Component> oldValue, ObservableList<Component> newValue) {
+        // UNBIND OLDVALUE
+        if (oldValue != null) {
+            tableviewTicket.setItems(null);
+        }
+        // BIND NEWVALUE
+        if (newValue != null) {
+            tableviewTicket.setItems(newValue);
+        }
+    }
+	
     @FXML
     void onExitAction(ActionEvent event) { 
     	Alert alert = new Alert(AlertType.CONFIRMATION);
@@ -128,14 +137,11 @@ public class MainController implements Initializable {
     }
     @FXML
     void onNewAction(ActionEvent event) { 
-		
+    	tableviewComponents.getItems().clear(); 
+    	tableviewTicket.getItems().clear(); 
+    	finalpriceTXT.setText("");
+    	total = 0d;
     }
-    @FXML
-    void onOpenAction(ActionEvent event) { }
-    @FXML
-    void onSaveAction(ActionEvent event) { }
-    @FXML
-    void onSaveAllAction(ActionEvent event) { }
 
 	@FXML
 	void onSettingsAction(ActionEvent event) throws IOException {
@@ -280,6 +286,8 @@ public class MainController implements Initializable {
 		tableviewTicket.getItems().add(addComponent);
 		total = total + selected.getPrice();
 		finalpriceTXT.setText(String.format("%.2f", total));
+		
+		removeBTN.setDisable(false);
 	}
 	
 	@FXML
@@ -295,17 +303,27 @@ public class MainController implements Initializable {
     void onInfoProduct(ActionEvent event) throws IOException {
 		String nameComponent = tableviewComponents.getSelectionModel().getSelectedItem().getName();
 		DBUtils.showInfo(nameComponent, comp);
+
     }
 
 	@FXML
 	void onFinishAction(ActionEvent event) { }
-
-	@FXML
-	void onPayAction(ActionEvent event) { }
 
 	
 	// SHOW VIEW
 	public BorderPane getView() {
 		return view;
 	}
+	
+	public final ListProperty<Component> ticket_listProperty() {
+        return this.ticket_list;
+    }
+
+    public final ObservableList<Component> getTicket_list() {
+        return this.ticket_listProperty().get();
+    }
+
+    public final void setTicket_list(final ObservableList<Component> ticket_list) {
+        this.ticket_listProperty().set(ticket_list);
+    }
 }

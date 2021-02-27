@@ -42,31 +42,6 @@
                               <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                            </accelerator>
                         </MenuItem>
-                        <MenuItem fx:id="OpenButton" mnemonicParsing="false" onAction="#onOpenAction" text="Open...">
-                           <accelerator>
-                              <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
-                           </accelerator>
-                           <graphic>
-                              <ImageView pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../images/open-16x16.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </MenuItem>
-                        <MenuItem fx:id="SaveButton" mnemonicParsing="false" onAction="#onSaveAction" text="Save">
-                           <accelerator>
-                              <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
-                           </accelerator>
-                           <graphic>
-                              <ImageView pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../images/save-16x16.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </MenuItem>
-                        <MenuItem fx:id="SaveAllButton" mnemonicParsing="false" onAction="#onSaveAllAction" text="Save all..." />
                         <SeparatorMenuItem mnemonicParsing="false" />
                         <MenuItem fx:id="ExitButton" mnemonicParsing="false" onAction="#onExitAction" text="Exit">
                            <accelerator>
