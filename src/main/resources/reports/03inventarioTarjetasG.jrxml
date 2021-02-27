@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="inventario" pageWidth="595" pageHeight="842" columnWidth="495" leftMargin="50" rightMargin="50" topMargin="50" bottomMargin="50" uuid="9efdda5a-4f3c-44b4-a32a-6a6e018401b7">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Inventario"/>
+	<subDataset name="Empty Dataset1" uuid="76305c05-e857-443e-922f-5e538612175b"/>
+	<parameter name="empresa" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="cantidad" class="java.lang.Integer">
+		<fieldDescription><![CDATA[cantidad]]></fieldDescription>
+	</field>
+	<field name="id" class="java.lang.Long">
+		<fieldDescription><![CDATA[id]]></fieldDescription>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[nombre]]></fieldDescription>
+	</field>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="490" height="79" uuid="3027aba3-c38b-42a2-a8ee-510197f393cb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="47"/>
+				</textElement>
+				<text><![CDATA[Inventario]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="70" width="491" height="1" uuid="3647814d-8ae2-4af7-9e1f-74871b5c7357"/>
+			</line>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="50" y="12" width="441" height="30" uuid="e95096c8-e99a-4047-9f58-ad6e77b0894b"/>
+				<text><![CDATA[TARJETA GRAFICA]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="19" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="558" splitType="Stretch">
+			<staticText>
+				<reportElement x="1" y="20" width="79" height="20" uuid="7c1c39e2-e784-4609-9311-0afce95d3384">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cb867624-619e-4724-97e4-40ddaba27d1a"/>
+				</reportElement>
+				<text><![CDATA[Identificador:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="20" width="170" height="20" uuid="32c21ea5-792e-4e69-9ef0-13e2364fb0f4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6826e934-b846-4a88-b54a-8c6b99cd35bd"/>
+				</reportElement>
+				<text><![CDATA[Nombre: Gigabyte GeForce GT 1030 OC ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="20" width="130" height="20" uuid="8b0df122-3e80-4047-9d01-92c3c469a72c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e7e44306-ed84-4234-9b59-a8a8b2e32ac4"/>
+				</reportElement>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Precio:   84,99€]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="1" y="50" width="79" height="18" uuid="f27631d4-2628-4629-a470-27b504e6340a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cb867624-619e-4724-97e4-40ddaba27d1a"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="50" width="280" height="18" uuid="96e80bfe-de24-404f-9a42-181d5ef00142">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6826e934-b846-4a88-b54a-8c6b99cd35bd"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="360" y="50" width="130" height="18" uuid="48d74e8e-7794-4ed7-a723-fbb398986c22">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e7e44306-ed84-4234-9b59-a8a8b2e32ac4"/>
+				</reportElement>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{cantidad}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="90" width="79" height="20" uuid="6a4f5a10-8be4-4321-aa4e-62c6eeea3b72">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cb867624-619e-4724-97e4-40ddaba27d1a"/>
+				</reportElement>
+				<text><![CDATA[Identificador:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="89" width="170" height="20" uuid="345dd15d-600d-459e-93da-ff061e6188f1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6826e934-b846-4a88-b54a-8c6b99cd35bd"/>
+				</reportElement>
+				<text><![CDATA[Nombre: XFX AMD Radeon RX 580 GTS XXX Edition ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="89" width="130" height="20" uuid="fb977115-c25f-4c24-97ef-c9eb86818f21">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e7e44306-ed84-4234-9b59-a8a8b2e32ac4"/>
+				</reportElement>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Precio:   259,90€]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="1" y="121" width="79" height="18" uuid="b23686b3-d05f-4a27-92a2-6f5fbfc46626">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cb867624-619e-4724-97e4-40ddaba27d1a"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="121" width="280" height="18" uuid="11ad3f32-5765-4464-bb1b-1a6a3db48202">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6826e934-b846-4a88-b54a-8c6b99cd35bd"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="360" y="121" width="130" height="18" uuid="2cd75353-8ffe-4a67-8790-1fa5d895f771">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e7e44306-ed84-4234-9b59-a8a8b2e32ac4"/>
+				</reportElement>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{cantidad}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="160" width="79" height="20" uuid="7d4af0be-3573-4426-b4a5-7f306f36fea8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cb867624-619e-4724-97e4-40ddaba27d1a"/>
+				</reportElement>
+				<text><![CDATA[Identificador:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="160" width="170" height="20" uuid="e0b7982d-4935-47fa-8a94-4a1f61d199dd">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6826e934-b846-4a88-b54a-8c6b99cd35bd"/>
+				</reportElement>
+				<text><![CDATA[Nombre: EVGA GeForce RTX 2060 Super SC Ultra Gaming]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="160" width="130" height="20" uuid="fd65bd3e-7d2e-4758-a99b-5272619dde51">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e7e44306-ed84-4234-9b59-a8a8b2e32ac4"/>
+				</reportElement>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Precio:   449,90€]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="1" y="190" width="79" height="18" uuid="65a903dd-423a-45be-be19-29272938b113">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cb867624-619e-4724-97e4-40ddaba27d1a"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="190" width="280" height="18" uuid="684b48b4-751c-4a35-bfac-618c2f84b5f7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6826e934-b846-4a88-b54a-8c6b99cd35bd"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="360" y="190" width="130" height="18" uuid="368faaad-2996-4382-94a3-5936860f2aba">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e7e44306-ed84-4234-9b59-a8a8b2e32ac4"/>
+				</reportElement>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{cantidad}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="230" width="79" height="20" uuid="eb0be946-2a8b-42ea-b27d-917151690446">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cb867624-619e-4724-97e4-40ddaba27d1a"/>
+				</reportElement>
+				<text><![CDATA[Identificador:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="230" width="170" height="20" uuid="9080c780-5b52-4a18-bbec-6778638d03f9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6826e934-b846-4a88-b54a-8c6b99cd35bd"/>
+				</reportElement>
+				<text><![CDATA[Nombre: Asus GeForce GTX 1050 Ti]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="230" width="130" height="20" uuid="b1e700ab-5bef-4f9a-b88e-c7be5d05c985">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e7e44306-ed84-4234-9b59-a8a8b2e32ac4"/>
+				</reportElement>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Precio:   210,81€]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="1" y="260" width="79" height="18" uuid="795e5ea2-6235-4911-a863-81f781bbe509">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cb867624-619e-4724-97e4-40ddaba27d1a"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="260" width="280" height="18" uuid="356ca833-285e-4d13-b992-c17249f4a70d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6826e934-b846-4a88-b54a-8c6b99cd35bd"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="360" y="260" width="130" height="18" uuid="3f0fa9e1-17c0-4325-83bd-c320260cf213">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e7e44306-ed84-4234-9b59-a8a8b2e32ac4"/>
+				</reportElement>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{cantidad}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="300" width="79" height="20" uuid="9d2364fe-ec62-4350-9527-e9495c63c3ef">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cb867624-619e-4724-97e4-40ddaba27d1a"/>
+				</reportElement>
+				<text><![CDATA[Identificador:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="300" width="170" height="20" uuid="67f7cd4e-efcf-4871-bb18-13983c0af51b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6826e934-b846-4a88-b54a-8c6b99cd35bd"/>
+				</reportElement>
+				<text><![CDATA[Nombre: PowerColor Red Dragon Radeon RX 550 ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="300" width="130" height="20" uuid="7be87596-ae87-4db6-b1db-b78c793faedb">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e7e44306-ed84-4234-9b59-a8a8b2e32ac4"/>
+				</reportElement>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Precio:   99,99€]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="1" y="330" width="79" height="18" uuid="2a7f427e-3561-497b-9b4c-da0ed68d7ba7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cb867624-619e-4724-97e4-40ddaba27d1a"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="330" width="280" height="18" uuid="af5b30d6-3a6c-4e59-be7d-4976537a3151">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6826e934-b846-4a88-b54a-8c6b99cd35bd"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="360" y="330" width="130" height="18" uuid="6236004b-8870-459d-9050-7915f0837e8d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e7e44306-ed84-4234-9b59-a8a8b2e32ac4"/>
+				</reportElement>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{cantidad}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="370" width="79" height="20" uuid="07181be4-1903-40c4-86a6-b5b7033c364c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cb867624-619e-4724-97e4-40ddaba27d1a"/>
+				</reportElement>
+				<text><![CDATA[Identificador:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="370" width="170" height="20" uuid="bee85517-edba-47eb-9e10-12d5104555e6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6826e934-b846-4a88-b54a-8c6b99cd35bd"/>
+				</reportElement>
+				<text><![CDATA[Nombre: Gigabyte Radeon RX 6900 XT ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="370" width="130" height="20" uuid="e4796f98-0179-4ce5-bdf5-85cb54795a67">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e7e44306-ed84-4234-9b59-a8a8b2e32ac4"/>
+				</reportElement>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Precio:   1349,69€]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="1" y="400" width="79" height="18" uuid="c85be4c3-2ac1-4d5c-80e1-4bf960c368f5">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cb867624-619e-4724-97e4-40ddaba27d1a"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="400" width="280" height="18" uuid="9eac3aa1-6ba7-4426-bda5-3286c5388559">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6826e934-b846-4a88-b54a-8c6b99cd35bd"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="360" y="400" width="130" height="18" uuid="80790cc6-7e51-4fb9-9b50-2d70f823ec1f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e7e44306-ed84-4234-9b59-a8a8b2e32ac4"/>
+				</reportElement>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{cantidad}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="440" width="79" height="20" uuid="154e0543-b1cf-45ea-9c67-a1b8be521406">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cb867624-619e-4724-97e4-40ddaba27d1a"/>
+				</reportElement>
+				<text><![CDATA[Identificador:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="440" width="170" height="20" uuid="a047f872-2154-4a33-8eb6-fbdb7c94f72a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6826e934-b846-4a88-b54a-8c6b99cd35bd"/>
+				</reportElement>
+				<text><![CDATA[Nombre: Gigabyte GeForce GT 710]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="440" width="130" height="20" uuid="86b3353d-85f3-4266-99d2-3cb69d8089e6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e7e44306-ed84-4234-9b59-a8a8b2e32ac4"/>
+				</reportElement>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Precio:   50,69€]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="1" y="470" width="79" height="18" uuid="41f8a823-2d5f-49d0-996e-f9ed9f95e6fd">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cb867624-619e-4724-97e4-40ddaba27d1a"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="470" width="280" height="18" uuid="6abe5ef8-5a95-4b4a-8fa0-45ad372a07a2">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6826e934-b846-4a88-b54a-8c6b99cd35bd"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="360" y="470" width="130" height="18" uuid="6ec02871-8054-4a43-b9ec-5298f43d4e43">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e7e44306-ed84-4234-9b59-a8a8b2e32ac4"/>
+				</reportElement>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{cantidad}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="510" width="79" height="20" uuid="6a89317c-b1f8-4894-a751-a986a4a7f9db">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cb867624-619e-4724-97e4-40ddaba27d1a"/>
+				</reportElement>
+				<text><![CDATA[Identificador:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="1" y="540" width="79" height="18" uuid="d55a219c-4804-4a39-b2e5-219da91bca61">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cb867624-619e-4724-97e4-40ddaba27d1a"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="540" width="280" height="18" uuid="5f4d8c3e-49f9-4491-b100-3b279a4f89de">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6826e934-b846-4a88-b54a-8c6b99cd35bd"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="80" y="510" width="170" height="20" uuid="d8bb1574-c997-491e-88bd-ef35e40a0f56">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6826e934-b846-4a88-b54a-8c6b99cd35bd"/>
+				</reportElement>
+				<text><![CDATA[Nombre: Gigabyte GeForce GTX 1050Ti]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="360" y="540" width="130" height="18" uuid="95dd3883-353a-488b-90c4-e8c0f349c3c7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e7e44306-ed84-4234-9b59-a8a8b2e32ac4"/>
+				</reportElement>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{cantidad}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="360" y="510" width="130" height="20" uuid="255d96b5-0ea2-4b28-a9f8-471581245ac6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e7e44306-ed84-4234-9b59-a8a8b2e32ac4"/>
+				</reportElement>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Precio:   285,69€]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="63"/>
+	</pageFooter>
+</jasperReport>
