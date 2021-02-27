@@ -15,6 +15,10 @@ public class Component {
 		this.price = new SimpleDoubleProperty(price);
 	}
 	
+	public Component() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public StringProperty nameProperty() {
 		return this.name;
 	}

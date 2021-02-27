@@ -24,6 +24,15 @@
     -fx-opacity: 1;
 }
 
+.select {
+	-fx-background-image: url(../images/fondo.jpg);
+   -fx-background-size: cover;
+	-fx-font-size: 15pt;
+    -fx-font-family: "Courier New";
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+}
+
 .info {
     -fx-font-size: 15pt;
     -fx-font-family: "Courier New";

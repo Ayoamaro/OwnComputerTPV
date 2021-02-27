@@ -1,16 +1,8 @@
 eclipse.preferences.version=1
 encoding//src/main/java=UTF-8
 encoding//src/main/resources=UTF-8
-encoding//src/main/resources/reports/01inventarioProcesadores.jrxml=UTF-8
-encoding//src/main/resources/reports/02inventarioPlacaBase.jrxml=UTF-8
-encoding//src/main/resources/reports/03inventarioTarjetasG.jrxml=UTF-8
-encoding//src/main/resources/reports/04inventarioAlmacenamiento.jrxml=UTF-8
-encoding//src/main/resources/reports/05inventarioFuenteAlimentacion.jrxml=UTF-8
-encoding//src/main/resources/reports/06inventarioMemoriaRam.jrxml=UTF-8
-encoding//src/main/resources/reports/07inventarioCajas.jrxml=UTF-8
-encoding//src/main/resources/reports/08inventarioRefriLiqui.jrxml=UTF-8
-encoding//src/main/resources/reports/09inventarioMonitores.jrxml=UTF-8
 encoding//src/main/resources/reports/budget.jrxml=UTF-8
+encoding//src/main/resources/reports/stockList.jrxml=UTF-8
 encoding//src/test/java=UTF-8
 encoding//src/test/resources=UTF-8
 encoding/<project>=UTF-8

@@ -20,6 +20,7 @@ import javafx.beans.property.SimpleListProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.css.Styleable;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -159,6 +160,7 @@ public class MainController implements Initializable {
 		scene.setHgap(20);
 		scene.setVgap(20);
 		scene.setPadding(new Insets(20, 200, 20, 20));
+		scene.getStyleClass().add("select");
 		scene.getStylesheets().add(MainController.class.getResource("/css/darkTheme.css").toExternalForm());
 
 		ComboBox socketAvailable = new ComboBox();
