@@ -1,4 +1,4 @@
-package dad.javafx.owncomputer.stocklist;
+package dad.javafx.owncomputer.budget;
 
 import java.awt.Desktop;
 import java.io.File;
@@ -19,9 +19,9 @@ import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 
 public class ReportMain {
 	
-public static void generarPdf() throws JRException, IOException {
+public static void generatePdf() throws JRException, IOException {
 		
-		List<Component> misproductos = new ArrayList<>();
+		List<Component> product = new ArrayList<>();
 		
 		Component p1 = new Component();
 //		p1.setId(1234L);
@@ -36,24 +36,24 @@ public static void generarPdf() throws JRException, IOException {
 //		misproductos.add(p2);
 
 		// compila el informe
-		JasperReport report = JasperCompileManager.compileReport(ReportMain.class.getResourceAsStream("/reports/stockList.jrxml"));		
+		JasperReport report = JasperCompileManager.compileReport(ReportMain.class.getResourceAsStream("/reports/budget.jrxml"));		
 
 		// mapa de parámetros para el informe
 		Map<String, Object> parameters = new HashMap<String, Object>();
 		parameters.put("Company", "Own Computer");
 		
 		// generamos el informe (combinamos el informe compilado con los datos) 
-        JasperPrint print  = JasperFillManager.fillReport(report, parameters, new JRBeanCollectionDataSource(misproductos));
+        JasperPrint print  = JasperFillManager.fillReport(report, parameters, new JRBeanCollectionDataSource(product));
         
         // exporta el informe a un fichero PDF
         JasperExportManager.exportReportToPdfFile(print, "pdf/stockList.pdf");
         
         // Abre el archivo PDF generado con el programa predeterminado del sistema
-		Desktop.getDesktop().open(new File("pdf/stockList.pdf"));
+		Desktop.getDesktop().open(new File("pdf/budget.pdf"));
 	}
 	
 	public static void main(String[] args) throws JRException, IOException {
-		generarPdf();
+		generatePdf();
 	}
 
 }

@@ -1,4 +1,4 @@
-package dad.javafx.owncomputer.stocklist;
+package dad.javafx.owncomputer.budget;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +9,7 @@ import dad.javafx.owncomputer.model.Component;
 import dad.javafx.owncomputer.main.App;
 
 
-public class StocklistDataProvider {
+public class BudgetDataProvider {
 	
 public static List<Component> getAllProducts() {
 		
