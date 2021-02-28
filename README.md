@@ -14,7 +14,7 @@
 <h3>How to use our app?</h3>
 <p>We will start in the upper left corner.The two <strong>File</strong> and <strong>Help</strong> buttons are located on the application's navigation bar.&nbsp;The "File" button contains two buttons, "<strong>New</strong>" and "<strong>Exit</strong>": - "<strong>New</strong>" allows us to empty the entire interface to create a new budget, emptying the entire interface - "<strong>Exit</strong>" allows us to exit the application.</p>
 <p></p>
-<img>https://github.com/dam-dad/OwnComputerTPV/blob/main/src/main/resources/docImages/1.jpg</img>
+<img src=https://github.com/dam-dad/OwnComputerTPV/blob/main/src/main/resources/docImages/1.jpg>
 <p style="text-align: right;">Figure 1</p>
 <p style="text-align: right;">Figure 2</p>
 <p>Just below, and in a black bar, we find the button&nbsp;<strong>"First, select the&nbsp;settings"</strong>, which gives us the option to choose an initial configuration, through a pop-up window, of sockets, connection hard-disk and type RAM through a drop-down for, later, the available options of elements that are compatible with our initial configuration are opened.</p>
