@@ -116,9 +116,9 @@ public class MainController implements Initializable {
         }
 	}
 	
-    @FXML
-    void onExitAction(ActionEvent event) { 
-    	Alert alert = new Alert(AlertType.CONFIRMATION);
+    	@FXML
+    	void onExitAction(ActionEvent event) { 
+    		Alert alert = new Alert(AlertType.CONFIRMATION);
 		alert.setTitle("Exit");
 		alert.setHeaderText("Are you sure?");
 		
@@ -126,14 +126,15 @@ public class MainController implements Initializable {
 		if (result.get() == ButtonType.OK) {
 			System.exit(0);
 		}
-    }
-    @FXML
-    void onNewAction(ActionEvent event) { 
-    	tableviewComponents.getItems().clear(); 
-    	tableviewTicket.getItems().clear(); 
-    	finalpriceTXT.setText("");
-    	total = 0d;
-    }
+    	}
+	
+    	@FXML
+    	void onNewAction(ActionEvent event) { 
+    		tableviewComponents.getItems().clear(); 
+    		tableviewTicket.getItems().clear(); 
+    		finalpriceTXT.setText("");
+    		total = 0d;
+    	}
 
 	@FXML
 	void onSettingsAction(ActionEvent event) throws IOException {
@@ -302,10 +303,10 @@ public class MainController implements Initializable {
 	}
 	
 	@FXML
-    void onInfoProduct(ActionEvent event) throws IOException {
+    	void onInfoProduct(ActionEvent event) throws IOException {
 		String nameComponent = tableviewComponents.getSelectionModel().getSelectedItem().getName();
 		DBUtils.showInfo(nameComponent, comp);
-    }
+    	}
 
 	@FXML
 	void onFinishAction(ActionEvent event) { 
