@@ -16,6 +16,8 @@
 <p></p>
 <img src=https://github.com/dam-dad/OwnComputerTPV/blob/main/src/main/resources/docImages/1.jpg>
 <img src=https://github.com/dam-dad/OwnComputerTPV/blob/main/src/main/resources/docImages/2.JPG>
+<p>In the "Help" tab you can access a link to the user manual. You will only have to copy it in your browser.</p>
+<img src=https://github.com/dam-dad/OwnComputerTPV/blob/main/src/main/resources/docImages/16.JPG>
 <p>Just below, and in a black bar, we find the button&nbsp;<strong>"First, select the&nbsp;settings"</strong>, which gives us the option to choose an initial configuration, through a pop-up window, of sockets, connection hard-disk and type RAM through a drop-down for, later, the available options of elements that are compatible with our initial configuration are opened.</p>
 <p></p>
 <img src=https://github.com/dam-dad/OwnComputerTPV/blob/main/src/main/resources/docImages/3.jpg>
