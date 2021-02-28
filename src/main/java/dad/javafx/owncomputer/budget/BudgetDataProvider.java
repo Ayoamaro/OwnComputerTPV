@@ -8,7 +8,6 @@ import dad.javafx.owncomputer.main.MainController;
 import dad.javafx.owncomputer.model.Component;
 import dad.javafx.owncomputer.main.App;
 
-
 public class BudgetDataProvider {
 	
 public static List<Component> getAllProducts() {

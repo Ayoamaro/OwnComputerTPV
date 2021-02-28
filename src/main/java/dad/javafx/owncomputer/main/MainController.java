@@ -8,25 +8,23 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 
 import dad.database.DBUtils;
+import dad.javafx.owncomputer.budget.ReportMain;
 import dad.javafx.owncomputer.model.Compatibility;
 import dad.javafx.owncomputer.model.Component;
 import dad.javafx.owncomputer.model.Disk;
 import dad.javafx.owncomputer.model.RAM;
 import dad.javafx.owncomputer.model.Socket;
 import dad.javafx.owncomputer.util.DialogInfo;
-import javafx.application.Platform;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.css.Styleable;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
-import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
@@ -37,7 +35,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ButtonBar.ButtonData;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -45,15 +42,17 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import net.sf.jasperreports.engine.JRException;
 
 public class MainController implements Initializable {
 	
+	// LISTPROPERTY, INT...
 	private ListProperty<Component> component_List = new SimpleListProperty<Component>(FXCollections.observableArrayList());
 	private ListProperty<Socket> socket_list = new SimpleListProperty<Socket>(FXCollections.observableArrayList());
 	private ListProperty<Disk> disk_list = new SimpleListProperty<Disk>(FXCollections.observableArrayList());
 	private ListProperty<RAM> RAM_list = new SimpleListProperty<RAM>(FXCollections.observableArrayList());
 	private List<Component> list_component = new ArrayList<Component>();
-	private ListProperty<Component> ticket_list = new SimpleListProperty<Component>(FXCollections.observableArrayList());
+	private ListProperty<Component> ticket = new SimpleListProperty<Component>(FXCollections.observableArrayList());
 	private String socket_selected, disk_selected, RAM_selected;
 	private int comp;
 	private double total = 0d;
@@ -61,17 +60,10 @@ public class MainController implements Initializable {
 	// VIEW
 	@FXML
 	private BorderPane view;
-	
-    public ListProperty<Component> getComponent_List() {
-		return component_List;
-	}
-
 	@FXML
     private MenuItem NewButton;
-
     @FXML
     private MenuItem ExitButton;
-    
 	@FXML
 	private Button settingsBTN, cpuBTN, motherboardBTN, heatsinkBTN, memoryramBTN, graphiccardBTN, harddiskBTN, powersupplyBTN,
 			caseBTN, devicesBTN, addBTN, removeBTN, infoBTN, finishBTN;
@@ -85,7 +77,6 @@ public class MainController implements Initializable {
 	private TextField finalpriceTXT;
 	
 
-
 	// CONSTRUCTOR
 	public MainController() throws IOException {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Main.fxml"));
@@ -94,13 +85,14 @@ public class MainController implements Initializable {
 	}
 	
 	// INITIALIZE
-	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		
-		tableviewTicket.itemsProperty().bind(ticket_list);
-	    ticket_list.addListener((o, oldValue, newValue) -> onTicketChanged(o, oldValue, newValue));
+		ticket.addListener((o, oldValue, newValue) -> onTicketChanged(o, oldValue, newValue));
 	    removeBTN.setDisable(true);
 		tableviewComponents.itemsProperty().bind(component_List);
+		if (tableviewTicket != null) {
+			tableviewTicket.itemsProperty().bind(ticket);
+		}
 		
 		nameColumn_Ticket.setCellValueFactory(new PropertyValueFactory<Component, String>("name"));
 		priceColumn_Ticket.setCellValueFactory(new PropertyValueFactory<Component, Number>("price"));
@@ -121,13 +113,9 @@ public class MainController implements Initializable {
 	private void onTicketChanged(ObservableValue<? extends ObservableList<Component>> o, ObservableList<Component> oldValue, ObservableList<Component> newValue) {
         // UNBIND OLDVALUE
         if (oldValue != null) {
-            tableviewTicket.setItems(null);
+        	tableviewTicket.itemsProperty().unbind();
         }
-        // BIND NEWVALUE
-        if (newValue != null) {
-            tableviewTicket.setItems(newValue);
-        }
-    }
+	}
 	
     @FXML
     void onExitAction(ActionEvent event) { 
@@ -167,11 +155,11 @@ public class MainController implements Initializable {
 		scene.getStyleClass().add("select");
 		scene.getStylesheets().add(MainController.class.getResource("/css/darkTheme.css").toExternalForm());
 
-		ComboBox socketAvailable = new ComboBox();
+		ComboBox<Socket> socketAvailable = new ComboBox<Socket>();
 		socketAvailable.getItems().addAll(socket_list.getValue());
-		ComboBox typeDiskAvailable = new ComboBox();
+		ComboBox<Disk> typeDiskAvailable = new ComboBox<Disk>();
 		typeDiskAvailable.getItems().addAll(disk_list.getValue());
-		ComboBox typeRamAvailable = new ComboBox();
+		ComboBox<RAM> typeRamAvailable = new ComboBox<RAM>();
 		typeRamAvailable.getItems().addAll(RAM_list.getValue());
 		
 		scene.addRow(0, new Label("Select your initial configuration"));
@@ -318,29 +306,25 @@ public class MainController implements Initializable {
     void onInfoProduct(ActionEvent event) throws IOException {
 		String nameComponent = tableviewComponents.getSelectionModel().getSelectedItem().getName();
 		DBUtils.showInfo(nameComponent, comp);
-
     }
 
 	@FXML
-	void onFinishAction(ActionEvent event) { }
+	void onFinishAction(ActionEvent event) { 
+		try {
+			ReportMain.generatePdf(ticket);
+		} catch (JRException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 
-	
 	// SHOW VIEW
 	public BorderPane getView() {
 		return view;
 	}
 	
-	public final ListProperty<Component> ticket_listProperty() {
-        return this.ticket_list;
-    }
-
-    public final ObservableList<Component> getTicket_list() {
-        return this.ticket_listProperty().get();
-    }
-
-    public final void setTicket_list(final ObservableList<Component> ticket_list) {
-        this.ticket_listProperty().set(ticket_list);
-    }
-    
-    
+	public ListProperty<Component> getComponent_List() {
+		return component_List;
+	}
 }

@@ -9,6 +9,7 @@ public class Component {
 	
 	private StringProperty name;
 	private DoubleProperty price;
+	private String routeImage = "images/owncomputer-icon.png";
 	
 	public Component(String name, Double price) {
 		this.name = new SimpleStringProperty(name);
@@ -43,4 +44,11 @@ public class Component {
 		this.priceProperty().set(price);
 	}
 
+	public String getRouteImage() {
+		return routeImage;
+	}
+
+	public void setRouteImage(String routeImage) {
+		this.routeImage = routeImage;
+	}
 }
