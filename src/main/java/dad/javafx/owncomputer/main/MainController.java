@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
+import javax.swing.JOptionPane;
+
 import dad.database.DBUtils;
 import dad.javafx.owncomputer.budget.ReportMain;
 import dad.javafx.owncomputer.model.Compatibility;
@@ -21,10 +23,13 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
@@ -41,6 +46,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import net.sf.jasperreports.engine.JRException;
 
@@ -64,6 +70,9 @@ public class MainController implements Initializable {
     	private MenuItem NewButton;
     	@FXML
     	private MenuItem ExitButton;
+    	
+        @FXML
+        private MenuItem userManual;
 	@FXML
 	private Button settingsBTN, cpuBTN, motherboardBTN, heatsinkBTN, memoryramBTN, graphiccardBTN, harddiskBTN, powersupplyBTN,
 			caseBTN, devicesBTN, addBTN, removeBTN, infoBTN, finishBTN;
@@ -318,6 +327,35 @@ public class MainController implements Initializable {
 			e.printStackTrace();
 		}
 	}
+	
+	
+    @FXML
+    void onUserManual(ActionEvent event) {
+    	
+    	Label copyLabel = new Label();
+    	copyLabel.setText("Copy this link in you browser: ");
+    	
+    	Label link = new Label();
+    	link.setText("https://github.com/dam-dad/OwnComputerTPV/blob/main/README.md");
+    	
+    	VBox root = new VBox();
+    	root.setSpacing(15);
+    	root.setAlignment(Pos.CENTER);
+    	root.getChildren().addAll(copyLabel, link);
+    	
+    	Scene scene = new Scene(root, 1000, 320);
+    	scene.getStylesheets().add(MainController.class.getResource("/css/darkTheme.css").toExternalForm());
+    	
+    	Stage primaryStage = new Stage();
+    	primaryStage.setScene(scene);
+    	primaryStage.setTitle("Manual User");
+    	primaryStage.show();
+    	
+    	
+    	}
+		
+		
+    	
 
 	// SHOW VIEW
 	public BorderPane getView() {
