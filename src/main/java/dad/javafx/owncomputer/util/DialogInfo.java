@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.List;
 
 import dad.database.DBConnection;
-import dad.javafx.owncomputer.model.Compatibility;
 import dad.javafx.owncomputer.model.Disk;
 import dad.javafx.owncomputer.model.RAM;
 import dad.javafx.owncomputer.model.Socket;

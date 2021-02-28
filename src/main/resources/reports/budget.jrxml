@@ -105,9 +105,9 @@
 	<summary>
 		<band height="30">
 			<textField pattern="#,##0.00¤;-#,##0.00 ¤">
-				<reportElement x="420" y="0" width="71" height="18" uuid="45d76b46-3a77-4d02-90c8-7f812108ccdc"/>
+				<reportElement x="414" y="0" width="71" height="18" uuid="45d76b46-3a77-4d02-90c8-7f812108ccdc"/>
 				<textElement textAlignment="Left">
-					<font size="12"/>
+					<font size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$V{total}]]></textFieldExpression>
 			</textField>
