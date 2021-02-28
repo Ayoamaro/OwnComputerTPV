@@ -60,7 +60,7 @@
 <p><a href="">Own computer install folder link</a></p>
 <hr />
 <h3>Where are our github repository?</h3>
-<p><a href="https://github.com/dam-dad/OwnComputerTPV&amp;nbsp">Own computer repository link</a></p>
+<p><a href="https://github.com/dam-dad/OwnComputerTPV">Own computer repository link</a></p>
 <hr />
 <h3>License</h3>
 <p><a href="https://github.com/dam-dad/OwnComputerTPV/blob/main/LICENSE">Own computer License link</a></p>
