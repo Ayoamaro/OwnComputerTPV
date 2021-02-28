@@ -13,10 +13,13 @@ import dad.javafx.owncomputer.model.Component;
 import dad.javafx.owncomputer.model.Disk;
 import dad.javafx.owncomputer.model.RAM;
 import dad.javafx.owncomputer.model.Socket;
+import dad.javafx.owncomputer.model.Ticket;
 import dad.javafx.owncomputer.util.DialogInfo;
 import javafx.application.Platform;
 import javafx.beans.property.ListProperty;
+import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleListProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -53,7 +56,7 @@ public class MainController implements Initializable {
 	private ListProperty<Disk> disk_list = new SimpleListProperty<Disk>(FXCollections.observableArrayList());
 	private ListProperty<RAM> RAM_list = new SimpleListProperty<RAM>(FXCollections.observableArrayList());
 	private List<Component> list_component = new ArrayList<Component>();
-	private ListProperty<Component> ticket_list = new SimpleListProperty<Component>(FXCollections.observableArrayList());
+	private ObjectProperty<Ticket> ticket = new SimpleObjectProperty<>();
 	private String socket_selected, disk_selected, RAM_selected;
 	private int comp;
 	private double total = 0d;
@@ -97,10 +100,9 @@ public class MainController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		
-		tableviewTicket.itemsProperty().bind(ticket_list);
-	    ticket_list.addListener((o, oldValue, newValue) -> onTicketChanged(o, oldValue, newValue));
-	    removeBTN.setDisable(true);
 		tableviewComponents.itemsProperty().bind(component_List);
+	    ticket.addListener((o, oldValue, newValue) -> onTicketChanged(o, oldValue, newValue));
+	    removeBTN.setDisable(true);
 		
 		nameColumn_Ticket.setCellValueFactory(new PropertyValueFactory<Component, String>("name"));
 		priceColumn_Ticket.setCellValueFactory(new PropertyValueFactory<Component, Number>("price"));
@@ -118,14 +120,14 @@ public class MainController implements Initializable {
 		}
 	 }
 	
-	private void onTicketChanged(ObservableValue<? extends ObservableList<Component>> o, ObservableList<Component> oldValue, ObservableList<Component> newValue) {
+	private void onTicketChanged(ObservableValue<? extends Ticket> v, Ticket oldValue, Ticket newValue) {
         // UNBIND OLDVALUE
         if (oldValue != null) {
-            tableviewTicket.setItems(null);
+        	tableviewTicket.itemsProperty().unbindBidirectional(oldValue.componentsProperty());
         }
         // BIND NEWVALUE
         if (newValue != null) {
-            tableviewTicket.setItems(newValue);
+        	tableviewTicket.itemsProperty().bindBidirectional(newValue.componentsProperty());
         }
     }
 	
@@ -167,11 +169,11 @@ public class MainController implements Initializable {
 		scene.getStyleClass().add("select");
 		scene.getStylesheets().add(MainController.class.getResource("/css/darkTheme.css").toExternalForm());
 
-		ComboBox socketAvailable = new ComboBox();
+		ComboBox<Socket> socketAvailable = new ComboBox<Socket>();
 		socketAvailable.getItems().addAll(socket_list.getValue());
-		ComboBox typeDiskAvailable = new ComboBox();
+		ComboBox<Disk> typeDiskAvailable = new ComboBox<Disk>();
 		typeDiskAvailable.getItems().addAll(disk_list.getValue());
-		ComboBox typeRamAvailable = new ComboBox();
+		ComboBox<RAM> typeRamAvailable = new ComboBox<RAM>();
 		typeRamAvailable.getItems().addAll(RAM_list.getValue());
 		
 		scene.addRow(0, new Label("Select your initial configuration"));
@@ -329,18 +331,6 @@ public class MainController implements Initializable {
 	public BorderPane getView() {
 		return view;
 	}
-	
-	public final ListProperty<Component> ticket_listProperty() {
-        return this.ticket_list;
-    }
-
-    public final ObservableList<Component> getTicket_list() {
-        return this.ticket_listProperty().get();
-    }
-
-    public final void setTicket_list(final ObservableList<Component> ticket_list) {
-        this.ticket_listProperty().set(ticket_list);
-    }
     
     
 }
