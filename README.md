@@ -51,7 +51,7 @@
 <img src=https://github.com/dam-dad/OwnComputerTPV/blob/main/src/main/resources/docImages/13.JPG>   
 <li>The button "create budget" will generate the invoice with all the elements that we have selected at the end of the selection.</li>
 <img src=https://github.com/dam-dad/OwnComputerTPV/blob/main/src/main/resources/docImages/14.jpg>   
-<img src=https://github.com/dam-dad/OwnComputerTPV/blob/main/src/main/resources/docImages/15.jpg>  
+<img src=https://github.com/dam-dad/OwnComputerTPV/blob/main/src/main/resources/docImages/15.JPG>  
 </ul>
 <p>In the last line at the bottom of the application page, we see a line with the rights reserved to OWNCOMPUTER</p>
 <hr />
