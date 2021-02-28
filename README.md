@@ -73,7 +73,6 @@
 <p>Go to the link bellow and donwload de install&nbsp;<span>executable.</span></p>
 <p><a href="">Own computer install folder link</a></p>
 <hr />
-<hr />
 <h3>System Requirements</h3>
 <p>Windows operating system.</p>
 <hr />
