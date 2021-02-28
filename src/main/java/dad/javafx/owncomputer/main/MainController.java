@@ -61,9 +61,9 @@ public class MainController implements Initializable {
 	@FXML
 	private BorderPane view;
 	@FXML
-    private MenuItem NewButton;
-    @FXML
-    private MenuItem ExitButton;
+    	private MenuItem NewButton;
+    	@FXML
+    	private MenuItem ExitButton;
 	@FXML
 	private Button settingsBTN, cpuBTN, motherboardBTN, heatsinkBTN, memoryramBTN, graphiccardBTN, harddiskBTN, powersupplyBTN,
 			caseBTN, devicesBTN, addBTN, removeBTN, infoBTN, finishBTN;
