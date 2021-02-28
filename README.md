@@ -73,6 +73,9 @@
 <p>Go to the link bellow and donwload de install&nbsp;<span>executable.</span></p>
 <p><a href="">Own computer install folder link</a></p>
 <hr />
+<h3>System Requirements</h3>
+<p>Windows operating system.</p>
+<hr />
 <h3>Where are our github repository?</h3>
 <p><a href="https://github.com/dam-dad/OwnComputerTPV">Own computer repository link</a></p>
 <hr />

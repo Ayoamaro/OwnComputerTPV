@@ -14,9 +14,12 @@ import dad.javafx.owncomputer.model.Component;
 import dad.javafx.owncomputer.model.Disk;
 import dad.javafx.owncomputer.model.RAM;
 import dad.javafx.owncomputer.model.Socket;
+import dad.javafx.owncomputer.model.Ticket;
 import dad.javafx.owncomputer.util.DialogInfo;
 import javafx.beans.property.ListProperty;
+import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleListProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -52,7 +55,11 @@ public class MainController implements Initializable {
 	private ListProperty<Disk> disk_list = new SimpleListProperty<Disk>(FXCollections.observableArrayList());
 	private ListProperty<RAM> RAM_list = new SimpleListProperty<RAM>(FXCollections.observableArrayList());
 	private List<Component> list_component = new ArrayList<Component>();
+<<<<<<< HEAD
 	private ListProperty<Component> ticket = new SimpleListProperty<Component>(FXCollections.observableArrayList());
+=======
+	private ObjectProperty<Ticket> ticket = new SimpleObjectProperty<>();
+>>>>>>> e8e17317f60bb1c096de865c5ff96f1963759f99
 	private String socket_selected, disk_selected, RAM_selected;
 	private int comp;
 	private double total = 0d;
@@ -87,12 +94,18 @@ public class MainController implements Initializable {
 	// INITIALIZE
 	public void initialize(URL location, ResourceBundle resources) {
 		
+<<<<<<< HEAD
 		ticket.addListener((o, oldValue, newValue) -> onTicketChanged(o, oldValue, newValue));
 	    removeBTN.setDisable(true);
 		tableviewComponents.itemsProperty().bind(component_List);
 		if (tableviewTicket != null) {
 			tableviewTicket.itemsProperty().bind(ticket);
 		}
+=======
+		tableviewComponents.itemsProperty().bind(component_List);
+	    ticket.addListener((o, oldValue, newValue) -> onTicketChanged(o, oldValue, newValue));
+	    removeBTN.setDisable(true);
+>>>>>>> e8e17317f60bb1c096de865c5ff96f1963759f99
 		
 		nameColumn_Ticket.setCellValueFactory(new PropertyValueFactory<Component, String>("name"));
 		priceColumn_Ticket.setCellValueFactory(new PropertyValueFactory<Component, Number>("price"));
@@ -110,12 +123,22 @@ public class MainController implements Initializable {
 		}
 	 }
 	
-	private void onTicketChanged(ObservableValue<? extends ObservableList<Component>> o, ObservableList<Component> oldValue, ObservableList<Component> newValue) {
+	private void onTicketChanged(ObservableValue<? extends Ticket> v, Ticket oldValue, Ticket newValue) {
         // UNBIND OLDVALUE
         if (oldValue != null) {
+<<<<<<< HEAD
         	tableviewTicket.itemsProperty().unbind();
         }
 	}
+=======
+        	tableviewTicket.itemsProperty().unbindBidirectional(oldValue.componentsProperty());
+        }
+        // BIND NEWVALUE
+        if (newValue != null) {
+        	tableviewTicket.itemsProperty().bindBidirectional(newValue.componentsProperty());
+        }
+    }
+>>>>>>> e8e17317f60bb1c096de865c5ff96f1963759f99
 	
     @FXML
     void onExitAction(ActionEvent event) { 
@@ -323,8 +346,13 @@ public class MainController implements Initializable {
 	public BorderPane getView() {
 		return view;
 	}
+<<<<<<< HEAD
 	
 	public ListProperty<Component> getComponent_List() {
 		return component_List;
 	}
+=======
+    
+    
+>>>>>>> e8e17317f60bb1c096de865c5ff96f1963759f99
 }
