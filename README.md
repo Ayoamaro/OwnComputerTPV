@@ -16,14 +16,19 @@
 <p></p>
 <img src=https://github.com/dam-dad/OwnComputerTPV/blob/main/src/main/resources/docImages/1.jpg>
 <p style="text-align: right;">Figure 1</p>
+<img src=https://github.com/dam-dad/OwnComputerTPV/blob/main/src/main/resources/docImages/2.JPG>
 <p style="text-align: right;">Figure 2</p>
 <p>Just below, and in a black bar, we find the button&nbsp;<strong>"First, select the&nbsp;settings"</strong>, which gives us the option to choose an initial configuration, through a pop-up window, of sockets, connection hard-disk and type RAM through a drop-down for, later, the available options of elements that are compatible with our initial configuration are opened.</p>
 <p></p>
+<img src=https://github.com/dam-dad/OwnComputerTPV/blob/main/src/main/resources/docImages/3.jpg>
 <p style="text-align: right;">Figure 3</p>
+<img src=https://github.com/dam-dad/OwnComputerTPV/blob/main/src/main/resources/docImages/4.JPG>
 <p style="text-align: right;">Figure 4</p>
+<img src=https://github.com/dam-dad/OwnComputerTPV/blob/main/src/main/resources/docImages/5.JPG>
 <p style="text-align: right;">Figure 5</p>
 <p>Once the initial configuration is chosen, the 9 buttons are deactivated with their respective components to choose from, fully compatible with our choice.</p>
 <p></p>
+<img src=https://github.com/dam-dad/OwnComputerTPV/blob/main/src/main/resources/docImages/6.JPG>
 <p style="text-align: right;">Figure 6</p>
 <ol>
 <li>The button "cpu" gives us the option to choose processor options with their respective prices</li>
@@ -36,21 +41,29 @@
 <li>The "heat-sinks" button gives us the option to choose liquid cooling options with their respective prices.</li>
 <li>The button "other devices" gives us the option to choose monitor options with their respective prices</li>
 </ol>
+<img src=https://github.com/dam-dad/OwnComputerTPV/blob/main/src/main/resources/docImages/7.jpg>
 <p style="text-align: right;">Figure 7</p>
 <p style="text-align: left;">In the following figure we can see there isn't motherboard option for the previous selection. There isn't any available in the data base.</p>
+<img src=https://github.com/dam-dad/OwnComputerTPV/blob/main/src/main/resources/docImages/8.jpg>
 <p style="text-align: right;">Figure 8</p>
 <p>In the empty frame at the beginning of the right, the elements that we are selecting appear and we add for the future delivery note. Just below we find the "total" box where we are shown the total price of all selected components.</p>
+<img src=https://github.com/dam-dad/OwnComputerTPV/blob/main/src/main/resources/docImages/9.jpg>
 <p style="text-align: right;">Figure 9</p>
 <p><em>Last but not least</em>, we find four buttons at the bottom right hand side</p>
 <ul>
 <li>The white cross with a green background is the add button, which we will use to add to the "cart" all the components we need.</li>
+<img src=https://github.com/dam-dad/OwnComputerTPV/blob/main/src/main/resources/docImages/10.jpg>
 <li style="text-align: right;">Figure 10</li>
 <li>The white line on a red background allows us to remove items from the cart, in case the need arises.</li>
+<img src=https://github.com/dam-dad/OwnComputerTPV/blob/main/src/main/resources/docImages/11.jpg> 
 <li style="text-align: right;">Figure 11</li>
 <li>The white question mark on an orange background shows us the technical specifications with a pop-up window of the component that we have selected. You can see more than one componente and compare the especifications.</li>
+<img src=https://github.com/dam-dad/OwnComputerTPV/blob/main/src/main/resources/docImages/12.jpg>  
 <li style="text-align: right;">Figure 12</li>
+<img src=https://github.com/dam-dad/OwnComputerTPV/blob/main/src/main/resources/docImages/13.JPG>   
 <li style="text-align: right;">Figure 13</li>
 <li>The button "create budget" will generate the invoice with all the elements that we have selected at the end of the selection.</li>
+<img src=https://github.com/dam-dad/OwnComputerTPV/blob/main/src/main/resources/docImages/14.jpg>   
 <li style="text-align: right;">Figure 14</li>
 <li style="text-align: right;">Figure 15(pdf view)</li>
 </ul>
