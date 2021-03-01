@@ -5,6 +5,13 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+/**
+ * This class is used to show the view
+ * @author Melania, Alexis, Ayoze & Aarón
+ * @version 01/02/2021
+ * @see <a href = "https://github.com/dam-dad/OwnComputerTPV" /> OwnComputer Github </a>
+ */
+
 public class App extends Application {
 
 	private static Stage primaryStage;

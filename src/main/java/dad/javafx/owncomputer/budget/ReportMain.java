@@ -16,24 +16,31 @@ import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 
+/**
+ * This class is used to create the reports
+ * @author Melania, Alexis, Ayoze & Aarón
+ * @version 01/02/2021
+ * @see <a href = "https://github.com/dam-dad/OwnComputerTPV" /> OwnComputer Github </a>
+ */
+
 public class ReportMain {
 	
 	public static void generatePdf(ListProperty<Component> ticket) throws JRException, IOException {
 		
-		// compila el informe
+		// compile the report
 		JasperReport report = JasperCompileManager.compileReport(ReportMain.class.getResourceAsStream("/reports/budget.jrxml"));		
 
-		// mapa de parámetros para el informe
+		// parameter map for report
 		Map<String, Object> parameters = new HashMap<String, Object>();
 		parameters.put("Company", "Own Computer");
 		
-		// generamos el informe (combinamos el informe compilado con los datos) 
+		// we generate the report (we combine the compiled report with the data)
 		JasperPrint print  = JasperFillManager.fillReport(report, parameters, new JRBeanCollectionDataSource(ticket));
         
-		// exporta el informe a un fichero PDF
+		// export the report to a PDF file
 		JasperExportManager.exportReportToPdfFile(print, "pdf/budget.pdf");
         
-		// Abre el archivo PDF generado con el programa predeterminado del sistema
+		//Open the generated PDF file with the system default program
 		Desktop.getDesktop().open(new File("pdf/budget.pdf"));
 	}
 }

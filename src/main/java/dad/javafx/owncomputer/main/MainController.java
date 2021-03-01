@@ -50,6 +50,13 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import net.sf.jasperreports.engine.JRException;
 
+/**
+ * Class to main controller that manages the functions of our app
+ * @author Melania, Alexis, Ayoze & Aarón
+ * @version 01/02/2021
+ * @see <a href = "https://github.com/dam-dad/OwnComputerTPV" /> OwnComputer Github </a>
+ */
+
 public class MainController implements Initializable {
 	
 	// LISTPROPERTY, INT...
@@ -125,6 +132,7 @@ public class MainController implements Initializable {
         }
 	}
 	
+		//WINDOWS TO EXIT AND RESTAR THE APP
     	@FXML
     	void onExitAction(ActionEvent event) { 
     		Alert alert = new Alert(AlertType.CONFIRMATION);
@@ -200,6 +208,8 @@ public class MainController implements Initializable {
 			RAM_selected = result.get().getTypeRAM();
 		}
 	}
+	
+	//BUTTONS TO SHOW THE INFOMATION
 	
 	@FXML
 	void onCPU_Pressed(ActionEvent event) throws IOException {
@@ -289,6 +299,8 @@ public class MainController implements Initializable {
 		DBUtils.fillScreensTable(list_component);
 		component_List.addAll(list_component);
 	}
+	
+	//BUTTONS TO ADD, REMOVE AND SHOW THE INFOMATION ABOUT THE COMPONENTS
 
 	@FXML
 	void onAddProduct(ActionEvent event) { 
@@ -316,6 +328,8 @@ public class MainController implements Initializable {
 		String nameComponent = tableviewComponents.getSelectionModel().getSelectedItem().getName();
 		DBUtils.showInfo(nameComponent, comp);
     	}
+	
+	//BUTTON TO GENERATE THE REPORTS
 
 	@FXML
 	void onFinishAction(ActionEvent event) { 
@@ -328,6 +342,7 @@ public class MainController implements Initializable {
 		}
 	}
 	
+	//BUTTON TO SHOW THE LINK ABOUT USER MANUAL
 	
     @FXML
     void onUserManual(ActionEvent event) {

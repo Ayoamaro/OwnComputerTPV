@@ -14,12 +14,16 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
+/**
+ * Class to implement the database methods when filling the component lists
+ * @author Melania, Alexis, Ayoze & Aarón
+ * @version 01/02/2021
+ * @see <a href = "https://github.com/dam-dad/OwnComputerTPV" /> OwnComputer Github </a>
+ */
+
 public class DBUtils {
 	
-	/* Clase para implementar los metodos de
-	 * la base de datos a la hora de llenar
-	 * las listas de componentes
-	 */
+	/*Constructors to query the database and show the information of the selected object.*/
 	
 	public static void fillCPUTable(List<Component> list, String socket_selected) throws IOException {
 		
@@ -276,10 +280,9 @@ public class DBUtils {
 		}
 		
 	}
+	
 
 	public static void showInfo(String name, int table) throws IOException {
-		// TODO Auto-generated method stub
-		
 		
 		switch (table) {
 		
@@ -309,6 +312,8 @@ public class DBUtils {
 			break;
 		}
 	}
+	
+	/*Show the information window*/
 	
 	public static void showInfoWindow(String info) throws IOException {
 	

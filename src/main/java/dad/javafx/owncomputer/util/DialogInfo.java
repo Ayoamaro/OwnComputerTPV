@@ -12,7 +12,17 @@ import dad.javafx.owncomputer.model.RAM;
 import dad.javafx.owncomputer.model.Socket;
 import javafx.scene.control.Button;
 
+/**
+ * This class is used to filter the data in the tableView 
+ * according to the specifications given by the user
+ * @author Melania, Alexis, Ayoze & Aarón
+ * @version 01/02/2021
+ * @see <a href = "https://github.com/dam-dad/OwnComputerTPV" /> OwnComputer Github </a>
+ */
+
 public class DialogInfo {
+	
+	/*Constructor to obtain the data from socket list*/
 
 	public static void getSocket(List<Socket> list) throws IOException {
 		
@@ -41,6 +51,8 @@ public class DialogInfo {
 		
 	}
 	
+	/*Constructor to obtain the data from disk list*/
+	
 	public static void getDisk(List<Disk> list) throws IOException {
 		
 		java.sql.Connection con =  DBConnection.connect();
@@ -68,6 +80,8 @@ public class DialogInfo {
 		
 	}
 	
+	/*Constructor to obtain the data from ram list*/
+	
 	public static void getRAM(List<RAM> list) throws IOException {
 		
 		java.sql.Connection con =  DBConnection.connect();
@@ -94,6 +108,8 @@ public class DialogInfo {
 		}
 		
 	}
+	
+	/*Constructors disable and enable the buttons*/
 	
 	public static void activateButtons(Button cpuBTN, Button motherboardBTN, Button heatsinkBTN, Button memoryramBTN, Button graphiccardBTN, Button harddiskBTN, Button powersupplyBTN, Button caseBTN, Button devicesBTN) {
 		cpuBTN.setDisable(false);
