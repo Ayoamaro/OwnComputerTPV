@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import dad.javafx.owncomputer.model.Component;
+import dad.javafx.owncomputer.util.Config;
 import javafx.beans.property.ListProperty;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
@@ -38,9 +39,9 @@ public class ReportMain {
 		JasperPrint print  = JasperFillManager.fillReport(report, parameters, new JRBeanCollectionDataSource(ticket));
         
 		// export the report to a PDF file
-		JasperExportManager.exportReportToPdfFile(print, "pdf/budget.pdf");
+		JasperExportManager.exportReportToPdfFile(print, Config.getConfigDir() + "/budget.pdf");
         
 		//Open the generated PDF file with the system default program
-		Desktop.getDesktop().open(new File("pdf/budget.pdf"));
+		Desktop.getDesktop().open(new File(Config.getConfigDir() + "/budget.pdf"));
 	}
 }

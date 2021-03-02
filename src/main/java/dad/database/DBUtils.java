@@ -188,14 +188,14 @@ public class DBUtils {
 				list.add(new Component(rs.getString("nameDisk"), rs.getDouble("priceDisk")));
 			}
 		} catch (SQLException e) {
-			System.out.println(e.toString());
+			System.err.println(e.toString());
 		} finally {
 			try {
 				rs.close();
 				ps.close();
 				con.close();
 			} catch (SQLException e) {
-				System.out.println(e.toString());
+				System.err.println(e.toString());
 			}
 		}
 		

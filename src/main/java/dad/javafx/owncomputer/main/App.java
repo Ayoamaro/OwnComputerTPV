@@ -1,5 +1,6 @@
 package dad.javafx.owncomputer.main;
 
+import dad.javafx.owncomputer.util.Config;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -19,6 +20,12 @@ public class App extends Application {
 	private static MainController mainController;
 	
 	private static Scene mainScene;
+	
+	@Override
+	public void init() throws Exception {
+		Config.initDatabase();
+		super.init();
+	}
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
