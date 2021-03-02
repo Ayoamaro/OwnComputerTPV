@@ -59,7 +59,7 @@
 <hr />
 <h3>How to install our app?</h3>
 <p>Go to the link bellow and donwload de install executable.</p>
-<p><a href="">Own computer install folder link</a></p>
+<p><a href="https://github.com/dam-dad/OwnComputerTPV/releases">Own computer install releases link</a></p>
 <hr />
 <h3>System Requirements</h3>
 <p>Windows operating system.</p>
